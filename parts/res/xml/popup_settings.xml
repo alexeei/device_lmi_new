@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/clear_speaker_title">
+
+    <SwitchPreference
+        android:key="popup_led_effect"
+        android:title="@string/popup_led_title"
+        android:summary="@string/popup_led_summary"
+        android:icon="@drawable/ic_popup_light"
+        android:defaultValue="false" />
+        
+    <ListPreference
+        android:key="popup_led_color"
+        android:title="@string/popup_led_color_title"
+        android:summary="%s"
+        android:entries="@array/popup_led_color_entries"
+        android:entryValues="@array/popup_led_color_values"
+        android:icon="@drawable/ic_popup_led_color"
+        android:defaultValue="7" />
+
+    <ListPreference
+        android:key="popup_sound_effect"
+        android:title="@string/popup_sound_title"
+        android:summary="%s"
+        android:entries="@array/popupcamera_effects_entries"
+        android:entryValues="@array/popupcamera_effects_values"
+        android:icon="@drawable/ic_popup_sound"
+        android:defaultValue="-1" />
+
+</PreferenceScreen>
