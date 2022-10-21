@@ -14,6 +14,7 @@ bluetooth.profile.pan.nap.enabled=true
 bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
+bluetooth.profile.vcp.controller.enabled=true
 
 # CNE
 persist.vendor.cne.feature=1
@@ -21,10 +22,6 @@ persist.vendor.cne.feature=1
 # DPM
 persist.vendor.dpm.feature=1
 
-# GPS
-persist.backup.ntpServer=0.pool.ntp.org
-persist.sys.gps.fence=true
-persist.sys.gps.polaris=true
 
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml

@@ -118,14 +118,16 @@ vendor.audio.spkr_prot.tx.sampling_rate=48000
 # Bluetooth
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 persist.bluetooth.a2dp_offload.disabled=false
-persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptiver2-aac-ldac
+persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
 persist.vendor.bt.aac_frm_ctl.enabled=true
 persist.vendor.bt.aac_vbr_frm_ctl.enabled=true
+persist.vendor.qcom.bluetooth.a2dp_mcast_test.enabled=false
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptiver2
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
 persist.vendor.qcom.bluetooth.soc=hastings
+persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=hastings
@@ -183,8 +185,8 @@ vendor.hw.fm.init=0
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
-debug.egl.hw=0
-debug.sf.hw=0
+#debug.egl.hw=0
+#debug.sf.hw=0
 debug.hwui.renderer=skiagl
 debug.renderengine.backend=skiaglthreaded
 debug.sf.auto_latch_unsignaled=true
@@ -197,12 +199,12 @@ vendor.gralloc.disable_ubwc=0
 persist.sys.sf.color_mode=9
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=2
-debug.sf.enable_advanced_sf_phase_offset=1
-debug.sf.enable_gl_backpressure=1
-debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
-debug.sf.high_fps_early_phase_offset_ns=-4000000
-debug.sf.high_fps_late_app_phase_offset_ns=1000000
-debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
+#debug.sf.enable_advanced_sf_phase_offset=1
+#debug.sf.enable_gl_backpressure=1
+#debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
+#debug.sf.high_fps_early_phase_offset_ns=-4000000
+#debug.sf.high_fps_late_app_phase_offset_ns=1000000
+#debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 
 
 

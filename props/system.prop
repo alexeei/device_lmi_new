@@ -35,12 +35,14 @@ persist.camera.facepp.fdenable=0
 # Charger
 ro.charger.disable_init_blank=true
 
+# Dexopt
+dalvik.vm.dex2oat64.enabled=true
 
 # Display
-debug.gralloc.gfx_ubwc_disable=0
+#debug.gralloc.gfx_ubwc_disable=0
 persist.vendor.color.matrix=2
 debug.sf.enable_hwc_vds=0
-debug.sf.latch_unsignaled=0
+#debug.sf.latch_unsignaled=0
 #ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
 #Disable MTE Async for system server
@@ -49,13 +51,10 @@ arm64.memtag.process.system_server=off
 # Disable blur on app launch
 ro.launcher.blur.appLaunch=0
 
-# SkiaVK
-#debug.renderengine.backend=threaded
-debug.hwui.renderer=skiagl
 
 # SkiaGL Threaded
 debug.renderengine.backend=skiaglthreaded
-#debug.hwui.renderer=opengl
+debug.hwui.renderer=skiagl
 renderthread.skia.reduceopstasksplitting=true 
 
 # Disable Skia tracing by default
@@ -122,7 +121,7 @@ persist.vendor.qti.telephony.vt_cam_interface=2
 
 # Ram
 ro.config.fha_enable=true
-persist.sys.fw.bg_apps_limit=96
+persist.sys.fw.bg_apps_limit=64
 ro.config.dha_cached_max=16
 ro.config.dha_empty_max=42
 ro.config.dha_empty_init=32
@@ -134,21 +133,23 @@ ro.config.sdha_apps_bg_min=8
 
 # LMK
 ro.lmk.kill_heaviest_task=true
-ro.lmk.kill_timeout_ms=100
-ro.lmk.thrashing_limit=30
-ro.lmk.thrashing_limit_decay=5
-ro.lmk.swap_free_low_percentage=10
-ro.lmk.psi_partial_stall_ms=70
-ro.lmk.psi_complete_stall_ms=70
-ro.lmk.use_new_strategy=true
-ro.lmk.psi_scrit_complete_stall_ms=75
-ro.lmk.nstrat_wmark_boost_factor=4
-ro.lmk.direct_reclaim_pressure=45
-ro.lmk.reclaim_scan_threshold=0
-ro.lmk.enable_watermark_check=true
-ro.lmk.enable_userspace_lmk=true
-ro.lmk.enhance_batch_kill=false
-ro.lmk.super_critical=701
+ro.lmk.use_minfree_levels=true
+ro.lmk.kill_timeout_ms=15
+#ro.lmk.kill_timeout_ms=100
+#ro.lmk.thrashing_limit=30
+#ro.lmk.thrashing_limit_decay=5
+$ro.lmk.swap_free_low_percentage=10
+#ro.lmk.psi_partial_stall_ms=70
+#ro.lmk.psi_complete_stall_ms=70
+#ro.lmk.use_new_strategy=true
+#ro.lmk.psi_scrit_complete_stall_ms=75
+#ro.lmk.nstrat_wmark_boost_factor=4
+#ro.lmk.direct_reclaim_pressure=45
+#ro.lmk.reclaim_scan_threshold=0
+#ro.lmk.enable_watermark_check=true
+#ro.lmk.enable_userspace_lmk=true
+#ro.lmk.enhance_batch_kill=false
+#ro.lmk.super_critical=701
 
 # Netmgr
 persist.vendor.data.iwlan.enable=true
@@ -186,7 +187,7 @@ ro.launcher.blur.appLaunch=0
 
 
 # Pre-rendering
-ro.vendor.perf.scroll_opt=true
+#ro.vendor.perf.scroll_opt=true
 
 # Venom
 #ro.surface_flinger.running_without_sync_framework=true
@@ -198,6 +199,7 @@ ro.config.dha_tunnable=1
 persist.service.lgospd.enable=0
 persist.service.pcsync.enable=0
 
-
+# Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true
 
 
