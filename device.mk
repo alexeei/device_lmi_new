@@ -24,7 +24,7 @@ $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 PRODUCT_BOARD_PLATFORM := kona
 TARGET_BOARD_PLATFORM := kona
 
-SELINUX_IGNORE_NEVERALLOWS := true
+#SELINUX_IGNORE_NEVERALLOWS := true
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
@@ -415,7 +415,7 @@ PRODUCT_PACKAGES += \
     libstagefright_foundation
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-syberia 
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-cherish
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 

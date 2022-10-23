@@ -197,6 +197,15 @@ drm.service.enabled=true
 # Factory Reset Protection
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# Fling
+ro.min.fling_velocity=160 
+ro.max.fling_velocity=20000
+ro.max.fling_velocity=20000 
+ro.vendor.qti.cgroup_follow.enable=true 
+persist.vendor.qti.inputopts.enable=true 
+persist.vendor.qti.inputopts.movetouchslop=0.6 
+ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
+
 # FM
 vendor.hw.fm.init=0
 
@@ -206,7 +215,6 @@ vendor.gatekeeper.disable_spu=true
 # Graphics
 persist.sys.sf.color_mode=9
 persist.sys.sf.color_saturation=1.0
-persist.sys.sf.native_mode=2
 debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_gl_backpressure=1
 debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
