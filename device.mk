@@ -257,8 +257,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     memtrack.kona \
-    vendor.display.config@1.20 \
-    vendor.display.config@1.20.vendor \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.mapper@1.1.vendor \
