@@ -98,7 +98,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     pm.dexopt.bg-dexopt=everything \
     pm.dexopt.ab-ota=verify
 
+USE_DEX2OAT_DEBUG := false
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # Dex
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -257,6 +259,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     memtrack.kona \
+    vendor.display.config@1.0 \
+    vendor.display.config@1.11.vendor \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator-service \
