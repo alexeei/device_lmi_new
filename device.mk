@@ -516,6 +516,10 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # Smart IDLE Maintaince
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.device_config.storage_native_boot.smart_idle_maint_period=10
+    
+# SystemUI plugins
+PRODUCT_PACKAGES += \
+    QuickAccessWallet
 
 # Telephony
 PRODUCT_PACKAGES += \
