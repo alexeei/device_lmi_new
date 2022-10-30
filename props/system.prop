@@ -176,8 +176,7 @@ debug.cpurend.vsync=false
 ro.launcher.blur.appLaunch=0
 
 
-# Pre-rendering
-#ro.vendor.perf.scroll_opt=true
+
 
 # Venom
 #ro.surface_flinger.running_without_sync_framework=true

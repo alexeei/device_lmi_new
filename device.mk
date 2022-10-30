@@ -425,6 +425,8 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-cherish
 
+
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
@@ -436,6 +438,7 @@ PRODUCT_PACKAGES += \
     LmiFrameworks \
     LmiSystemUI \
     WifiResCommon \
+    CustomWebViewOverlay \
     WifiResTarget
 
 # Partitions
