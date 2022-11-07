@@ -163,12 +163,10 @@ ro.crypto.allow_encrypt_override=true
 ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Display
-debug.sf.frame_rate_multiple_threshold=81
+debug.sf.frame_rate_multiple_threshold=60
 ro.vendor.display.paneltype=2
 ro.surface_flinger.supports_background_blur=1
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-ro.surface_flinger.max_virtual_display_dimension=4096
+#ro.surface_flinger.max_virtual_display_dimension=4096
 ro.surface_flinger.protected_contents=true
 vendor.display.enable_camera_smooth=1
 vendor.display.comp_mask=2
@@ -183,7 +181,7 @@ vendor.display.enable_posted_start_dyn=1
 vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
 vendor.display.use_layer_ext=0
-vendor.display.use_smooth_motion=0
+vendor.display.use_smooth_motion=1
 
 # DPM
 persist.vendor.dpm.feature=1
@@ -217,15 +215,12 @@ debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 debug.sf.auto_latch_unsignaled=true
 persist.sys.sf.color_mode=9
 persist.sys.sf.native_mode=0
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
-ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.protected_contents=true
-ro.surface_flinger.set_touch_timer_ms=200
+#ro.surface_flinger.set_touch_timer_ms=200
 ro.surface_flinger.use_color_management=true
-ro.surface_flinger.wcg_composition_dataspace=143261696
-ro.surface_flinger.max_virtual_display_dimension=4096
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+#ro.surface_flinger.wcg_composition_dataspace=143261696
+#ro.surface_flinger.max_virtual_display_dimension=4096
+
 
 
 # Keystore
@@ -274,8 +269,6 @@ ro.vendor.extension_library=libqti-perfd-client.so
 # Pre-rendering
 ro.vendor.perf.scroll_opt=true
 
-# Qualcomm System Daemon
-persist.vendor.qcomsysd.enabled=1
 
 # RCS
 persist.rcs.supported=1

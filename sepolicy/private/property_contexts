@@ -14,3 +14,6 @@ ro.ril.oem.meid                 u:object_r:deviceid_prop:s0
 ro.cust.test                    u:object_r:exported_system_prop:s0
 ro.miui.                        u:object_r:exported_system_prop:s0
 ro.fota.oem                     u:object_r:exported_system_prop:s0
+
+ro.min.fling_velocity             u:object_r:system_prop:s0
+ro.max.fling_velocity             u:object_r:system_prop:s0

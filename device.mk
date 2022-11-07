@@ -93,7 +93,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     pm.dexopt.first-boot=quicken \
     pm.dexopt.install=speed-profile \
     pm.dexopt.bg-dexopt=everything \
-    pm.dexopt.ab-ota=verify
+    pm.dexopt.ab-ota=speed-profile
 
 USE_DEX2OAT_DEBUG := false
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
@@ -438,7 +438,6 @@ PRODUCT_PACKAGES += \
     LmiFrameworks \
     LmiSystemUI \
     WifiResCommon \
-    CustomWebViewOverlay \
     WifiResTarget
 
 # Partitions
@@ -505,9 +504,9 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Speed up
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
-    Settings \
     Launcher3 \
-    SystemUI \
+    SettingsGoogle \
+    SystemUIGoogle \
     GoogleServicesFramework \
     Nexuslauncher \
     Smart Launcher \
@@ -580,6 +579,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+    
+#Webview
+PRODUCT_PACKAGES += bromite-webview    
 
 # WiFi
 PRODUCT_PACKAGES += \
