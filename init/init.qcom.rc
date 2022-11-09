@@ -64,7 +64,8 @@ on early-init
 
     # Workarround for cache
     rm /data/resource-cache
-    rm /data/system/package_cache
+    rm /data/system/package_cache 
+
 
 on init
 
