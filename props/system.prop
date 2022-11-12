@@ -24,7 +24,7 @@ ro.sf.blurs_are_expensive=1
 camera.disable_zsl_mode=true
 persist.vendor.camera.eis.enable=1
 persist.camera.facepp.fdenable=0
-vendor.camera.aux.packagelist=com.android.camera, com.google.android.GoogleCamera,org.codeaurora.snapcam
+vendor.camera.aux.packagelist=com.android.camera,com.google.android.GoogleCamera,org.codeaurora.snapcam
 
 
 # Charger
@@ -57,8 +57,6 @@ renderthread.skia.reduceopstasksplitting=true
 # Disable Skia tracing by default
 debug.hwui.skia_atrace_enabled=false
 
-# Camera
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.android.camera2
 
 # CNE
 persist.vendor.cne.feature=1
