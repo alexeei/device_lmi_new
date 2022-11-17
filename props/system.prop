@@ -39,7 +39,7 @@ debug.cpurend.vsync=false
 persist.vendor.color.matrix=2
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_hwc_vds=0
-#debug.sf.latch_unsignaled=0
+debug.sf.latch_unsignaled=1
 
 #Disable MTE Async for system server
 arm64.memtag.process.system_server=off

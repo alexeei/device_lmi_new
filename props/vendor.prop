@@ -136,9 +136,9 @@ bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
-bluetooth.profile.bap.unicast.client.enabled=true
-bluetooth.profile.ccp.server.enabled=true
-bluetooth.profile.vcp.controller.enabled=true
+bluetooth.profile.bap.unicast.client.enabled?=true
+bluetooth.profile.ccp.server.enabled?=true
+bluetooth.profile.vcp.controller.enabled?=true
 persist.bluetooth.a2dp_offload.disabled=false
 persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
 persist.vendor.bt.aac_frm_ctl.enabled=true
@@ -178,12 +178,12 @@ vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=1
 vendor.display.disable_scaler=0
 vendor.display.enable_async_powermode=1
-vendor.display.enable_optimize_refresh=1
+#vendor.display.enable_optimize_refresh=1
 vendor.display.enable_posted_start_dyn=1
 vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
 vendor.display.use_layer_ext=0
-vendor.display.use_smooth_motion=1
+#vendor.display.use_smooth_motion=1
 
 # DPM
 persist.vendor.dpm.feature=1

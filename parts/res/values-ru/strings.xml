@@ -47,6 +47,7 @@
     <string name="dc_dimming_enable_summary_not_supported">DC Dimming is not currently supported by the kernel</string>
     <!-- Popup camera -->
     <string name="popup_title">Настройки фронтальной камеры</string>
+    <string name="popup_summary">Вспышка, подсветка и звук</string>
     <string name="popup_led_title">Вспышка</string>
     <string name="popup_led_summary">Включить вспышку</string>
     <string name="popup_sound_title">Звуковые эффекты</string>
@@ -66,5 +67,17 @@
     <string name="popup_camera_calibrate_success">Откалибровано.</string>
     <string name="stop_operate_camera_frequently">Вы открываете камеру слишком часто.</string>
     <string name="takeback_camera_front_failed">Невозможно закрыть камеру. Попробуйте снова</string>
+    <string name="popup_led_color_title">Цвет подсветки камеры</string>
+    <string name="popup_led_color_blue">Синий</string>
+    <string name="popup_led_color_cyan">Бирюзовый</string>
+    <string name="popup_led_color_green">Зеленый</string>
+    <string name="popup_led_color_purple">Пурпурный</string>
+    <string name="popup_led_color_red">Красный</string>
+    <string name="popup_led_color_yellow">Желтый</string>
+    <string name="popup_led_color_white">Белый</string>
     <string name="popup_camera_front_failed">Невозможно открыть камеру. Попробуйте снова.</string>
+    <!-- Clear Speaker -->
+    <string name="clear_speaker_title">Очистка динамика</string>
+    <string name="clear_speaker_summary">Играет 30 секундный громкий звук для прочистки динамика</string>
+    <string name="clear_speaker_description">Запустите эту функцию 1 или 2 раза для небольших загрязнений. Установите громкость на максимум. Если загрязнение большое, потрясите устройство дополнительно. Не забудьте выключить наушники</string>
 </resources>

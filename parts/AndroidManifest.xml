@@ -38,50 +38,7 @@
         android:theme="@style/Theme.SubSettingsBase"
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true">
-        
-        <!-- DeviceExtras -->
-        <activity
-            android:name=".DeviceExtrasActivity"
-            android:exported="true"
-            android:label="@string/device_title">
-           
-            <intent-filter>
-                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
-            </intent-filter>
-
-            <meta-data
-                android:name="com.android.settings.icon"
-                android:resource="@drawable/ic_linux" />
-            <meta-data
-                android:name="com.android.settings.bg.hint"
-                android:resource="@color/settings_background" />
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.system" />
-            <meta-data
-                android:name="com.android.settings.summary"
-                android:resource="@string/device_summary" />
-        </activity>
-
-        <activity android:name=".DeviceExtras" />
-        
-        <service
-            android:name=".DeviceExtrasTileService"
-            android:exported="true"
-            android:icon="@drawable/ic_settings_device"
-            android:label="@string/device_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
-        <receiver android:name=".BootCompletedReceiver" android:exported="false">
-            <intent-filter android:priority="1000">
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
+       
         
          <!-- TTL Tile -->
         <service
