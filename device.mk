@@ -570,7 +570,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
     
 #Webview
-PRODUCT_PACKAGES += bromite-webview    
+#PRODUCT_PACKAGES += bromite-webview    
 
 # WiFi
 PRODUCT_PACKAGES += \
