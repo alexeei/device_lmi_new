@@ -4,7 +4,6 @@ persist.vendor.cne.feature=1
 # DPM
 persist.vendor.dpm.feature=1
 
-
 # Display
 debug.sf.enable_hwc_vds=1
 
@@ -12,7 +11,6 @@ debug.sf.enable_hwc_vds=1
 persist.backup.ntpServer=0.pool.ntp.org
 persist.sys.gps.fence=true
 persist.sys.gps.polaris=true
-
 
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml

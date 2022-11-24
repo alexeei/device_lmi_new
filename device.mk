@@ -111,41 +111,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
-    android.hardware.audio.service \
-    android.hardware.soundtrigger@2.3-impl \
-    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.audio@6.0-impl \
     audio.bluetooth.default \
     audio.primary.kona \
     audio.r_submix.default \
-    libaudiopreprocessing \
-    libbundlewrapper \
     audio.usb.default \
-    libdownmix \
     libbatterylistener \
-    libdynproc \
     libcomprcapture \
-    libeffectproxy \
     libhdmiedid \
-    libexthwplugin \
-    libhdmiedid \
-    libldnhncr \
     libhfp \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libreverbwrapper \
     libqcomvoiceprocessing \
     libsndmonitor \
-    libspkrprot \
     libtinycompress \
     libvolumelistener
-    
-# Audio Alsa Extensions
-PRODUCT_PACKAGES += \
-   libaudioroute \
-   libaudioroutev2 \
-   libalsautils \
-   libalsautilsv2
     
 # Audio-Legacy | From hardware/qcom-caf/sm8250/audio/configs/kona/kona.mk
 PRODUCT_PACKAGES += \
@@ -524,8 +506,8 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.device_config.storage_native_boot.smart_idle_maint_period=10
     
 # SystemUI plugins
-PRODUCT_PACKAGES += \
-    QuickAccessWallet
+#PRODUCT_PACKAGES += \
+  #  QuickAccessWallet
 
 # Telephony
 PRODUCT_PACKAGES += \
