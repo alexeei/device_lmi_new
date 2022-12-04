@@ -156,20 +156,11 @@ vendor.gatekeeper.disable_spu=true
 # Graphics
 persist.sys.sf.color_mode=9
 persist.sys.sf.color_saturation=1.0
-debug.sf.enable_advanced_sf_phase_offset=1
-debug.sf.enable_gl_backpressure=1
-debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
-debug.sf.high_fps_early_phase_offset_ns=-4000000
-debug.sf.high_fps_late_app_phase_offset_ns=1000000
-debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 debug.sf.auto_latch_unsignaled=true
 persist.sys.sf.color_mode=9
 persist.sys.sf.native_mode=0
-ro.surface_flinger.protected_contents=true
-#ro.surface_flinger.set_touch_timer_ms=200
 ro.surface_flinger.use_color_management=true
-#ro.surface_flinger.wcg_composition_dataspace=143261696
-#ro.surface_flinger.max_virtual_display_dimension=4096
+
 
 # LMK
 ro.vendor.lmk.force_inkernel_lmk=true
@@ -216,7 +207,7 @@ persist.vendor.quick.charge=1
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Pre-rendering
-ro.vendor.perf.scroll_opt=true
+ro.vendor.perf.scroll_opt=0
 
 
 # RCS

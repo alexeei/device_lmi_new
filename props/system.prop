@@ -111,9 +111,9 @@ ro.mot.eri.losalert.delay=100
 
 # Better Scrolling responsiveness and speed
 ro.min.fling_velocity=150
-persist.sys.scrollingcache=3
-view.scroll_friction=0 
-windowsmgr.max_events_per_sec=150
+persist.sys.scrollingcache=0
+view.scroll_friction=10 
+windowsmgr.max_events_per_sec=250
 ro.max.fling_velocity=20000
 ro.vendor.qti.cgroup_follow.enable=true 
 persist.vendor.qti.inputopts.enable=true 
@@ -125,7 +125,7 @@ ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
 debug.cpurend.vsync=false
 
 # Venom
-ro.surface_flinger.running_without_sync_framework=true
+#ro.surface_flinger.running_without_sync_framework=true
 
 
 # Smoothens UI
@@ -137,7 +137,6 @@ debugtool.anrhistory=0
 profiler.launch=false
 profiler.debugmonitor=false
 profiler.hung.dumpdobugreport=false
-persist.service.pcsync.enable=0
 persist.service.lgospd.enable=0
 
 # Zygote
