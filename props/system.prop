@@ -34,9 +34,10 @@ ro.launcher.blur.appLaunch=0
 
 
 # SkiaGL Threaded
-debug.renderengine.backend=skiaglthreaded
+#debug.renderengine.backend=skiaglthreaded
+debug.hwui.skia_atrace_enabled=false
 debug.hwui.renderer=skiagl 
-renderthread.skia.reduceopstasksplitting=true 
+#renderthread.skia.reduceopstasksplitting=true 
 #debug.hwc.force_gpu=1
 
 # Disable Skia tracing by default
