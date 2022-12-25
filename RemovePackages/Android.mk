@@ -128,7 +128,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     CarrierMetrics \
     Chrome \
     Chrome-Stub \
-    DevicePolicyPrebuilt \
     DiagnosticsToolPrebuilt \
     ConnMO \
     ConnMetrics \
@@ -196,7 +195,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     MaestroPrebuilt \
     OdadPrebuilt \
     SecurityHubPrebuilt \
-    SettingsIntelligenceGooglePrebuilt \
     WellbeingPrebuilt \
     talkback \
     Snap \
