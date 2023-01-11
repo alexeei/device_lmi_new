@@ -47,6 +47,8 @@ on init
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     chown system system /sys/devices/platform/soc/${ro.boot.bootdevice}/auto_hibern8
     chmod 0660 /sys/devices/platform/soc/${ro.boot.bootdevice}/auto_hibern8
+    write /dev/sys/fs/by-name/userdata/data_io_flag 56
+    write /dev/sys/fs/by-name/userdata/node_io_flag 56
 
     # ZRAM setup
     write /sys/block/zram0/comp_algorithm lz4
@@ -162,3 +164,7 @@ on property:init.svc.vendor.per_mgr=running
 
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
+    
+# Runtime fs tuning
+    write /dev/sys/fs/by-name/userdata/data_io_flag 8
+    write /dev/sys/fs/by-name/userdata/node_io_flag 8
