@@ -124,7 +124,6 @@ LOCAL_MODULE_TAGS := optional
     # Wellbeing ################################
 #    WellbeingPrebuilt
 LOCAL_OVERRIDES_PACKAGES := \
-    arcore \
     CarrierMetrics \
     Chrome \
     Chrome-Stub \
@@ -134,8 +133,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     DCMO \
     DMService \
     DeskClock \
-    ConnMetrics \
-    GoogleTTS \
     Maps \
     MyVerizonServices \
     OPScreenRecord \
@@ -158,7 +155,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     YouTube \
     YouTubeMusicPrebuilt \
     Calculator \
-    SafetyHubPrebuilt \
     AmbientSensePrebuilt \
     DevicePolicyPrebuilt \
     OBDM_Permissions \
@@ -171,7 +167,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     Videos \
     Video \
     ScribePrebuilt \
-    Tycho \
     Velvet \
     Papers \
     GoogleTTS \
@@ -198,6 +193,7 @@ LOCAL_OVERRIDES_PACKAGES := \
     WellbeingPrebuilt \
     talkback \
     Snap \
+    TurboPrebuilt \
     SafetyHubPrebuilt \
     GoogleTTS \
     LocationHistoryPrebuilt \
