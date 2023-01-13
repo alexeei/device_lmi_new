@@ -91,10 +91,17 @@
 # Wireless Charging Supply
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/wireless   u:object_r:vendor_sysfs_battery_supply:s0
 
+
 # Wlan
 /vendor/bin/nv_mac                                          u:object_r:vendor_wcnss_service_exec:s0
 /data/vendor/mac_addr(/.*)?                                 u:object_r:vendor_wifi_vendor_data_file:s0
 /data/vendor/wlan_logs(/.*)?                                u:object_r:vendor_wifi_vendor_log_data_file:s0
+
+# Vibrator Permissions
+/sys/class/leds/vibrator_aw8697(/.*)?                                                   u:object_r:sysfs_leds:s0
+/sys/class/leds/vibrator(/.*)?                                                          u:object_r:sysfs_leds:s0
+
+
 
 # Xiaomi modem boot devices
 /dev/block/platform/soc/1d84000.ufshc/by-name/msadp            u:object_r:vendor_efs_boot_dev:s0
