@@ -1,1 +1,3 @@
 hal_client_domain(cameraserver, hal_motor)
+allow cameraserver property_socket:sock_file { write };
+
