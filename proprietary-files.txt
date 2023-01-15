@@ -1026,6 +1026,7 @@ vendor/lib64/unnhal-acc-common.so
 vendor/lib64/unnhal-acc-hta.so
 vendor/lib64/unnhal-acc-hvx.so
 
+
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
 vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
@@ -1050,6 +1051,11 @@ vendor/lib64/libperfioctl.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
+
+# NFC
+vendor/etc/libnfc-nxp_RF.conf:vendor/libnfc-nxp_RF.conf
+vendor/lib/libsn100u_fw.so:vendor/lib64/libsn100u_fw.so
+
 
 # Peripheral manager
 vendor/bin/pm-proxy
