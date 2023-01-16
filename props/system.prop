@@ -42,7 +42,7 @@ ro.launcher.blur.appLaunch=0
 
 # SkiaGL Threaded
 #debug.renderengine.backend=skiaglthreaded
-debug.hwui.renderer=skiagl 
+debug.hwui.renderer=skiavk 
 #renderthread.skia.reduceopstasksplitting=true 
 #debug.hwc.force_gpu=1
 
