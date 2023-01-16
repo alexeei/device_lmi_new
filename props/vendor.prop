@@ -251,6 +251,9 @@ ro.soc.model=SM8250
 # Thermal
 vendor.sys.thermal.data.path=/data/vendor/thermal/
 
+# Subsystem silent restart
+persist.vendor.ssr.restart_level=ALL_ENABLE
+
 # USB
 vendor.usb.use_ffs_mtp=1
 vendor.usb.dpl.inst.name=dpl
