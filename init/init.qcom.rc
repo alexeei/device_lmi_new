@@ -752,10 +752,6 @@ service vendor.LKCore-rel /vendor/bin/LKCore
     user system
     group system log diag
 
-service esepmdaemon /system/vendor/bin/esepmdaemon
-    class core
-    user system
-    group nfc
 
 #add poweroffhandler
 service poweroffhandler /system/vendor/bin/poweroffhandler
