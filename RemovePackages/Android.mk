@@ -193,7 +193,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     WellbeingPrebuilt \
     talkback \
     Snap \
-    TurboPrebuilt \
     SafetyHubPrebuilt \
     GoogleTTS \
     LocationHistoryPrebuilt \
