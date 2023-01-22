@@ -17,6 +17,8 @@
 <resources>
     <string name="htsr_title">Touch Responsiveness</string>
     <string name="htsr_summary">Increases touch polling rate to decrease latency</string>
+    <string name="fch_title">USB fast charge</string>
+    <string name="fch_summary">Increase current when usb charge to 900mA. It may, theoretically, damage your hardware </string>
     <!-- Device specific settings -->
     <string name="device_settings_app_name">Advanced settings</string>
   <!-- Device Extras -->

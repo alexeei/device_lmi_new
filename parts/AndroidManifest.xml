@@ -135,6 +135,23 @@
                 android:resource="@string/htsr_summary" />
         </activity>
 
+        <activity
+            android:name=".fch.FchSettingsActivity"
+            android:exported="true"
+            android:label="@string/fch_title"
+            android:theme="@style/Theme.SubSettingsBase" >
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/fch_summary" />
+        </activity>
+
+
         <!-- Popup camera -->
         <service
             android:name=".popupcamera.PopupCameraService"

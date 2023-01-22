@@ -98,6 +98,9 @@ genfscon sysfs /devices/virtual/wakeup/wakeup71                                 
 # FlickerFree
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable                                                          u:object_r:vendor_sysfs_graphics:s0
 
+#Usb fast charge
+genfscon sysfs /sys/kernel/fast_charge/force_fast_charge u:object_r:vendor_sysfs_graphics:s0
+
 # Extcon sysfs
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon                                                                           u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon                                                                            u:object_r:sysfs_extcon:s0

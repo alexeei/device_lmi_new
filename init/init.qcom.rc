@@ -140,6 +140,9 @@ on boot
     chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable
     chmod 0664 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable
     
+    chown system system /sys/kernel/fast_charge/force_fast_charge
+    chmod 0664 /sys/kernel/fast_charge/force_fast_charge
+    
     #Dt2w
     chown system system /sys/touchpanel/double_tap
     chmod 0664 /sys/touchpanel/double_tap

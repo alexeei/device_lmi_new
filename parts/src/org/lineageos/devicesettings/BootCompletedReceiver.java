@@ -29,6 +29,7 @@ import androidx.preference.PreferenceManager;
 
 import org.lineageos.devicesettings.popupcamera.PopupCameraUtils;
 import org.lineageos.devicesettings.touchsampling.TouchSamplingUtils;
+import org.lineageos.devicesettings.fch.FchUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
@@ -43,6 +44,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
         PopupCameraUtils.startService(context);
         TouchSamplingUtils.restoreSamplingValue(context);
+        FchUtils.restoreFchValue(context);
         
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
