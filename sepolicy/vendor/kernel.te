@@ -1,3 +1,4 @@
+
 # For diag over socket
 userdebug_or_eng(`
   allow kernel self:qipcrtr_socket create_socket_perms_no_ioctl;
@@ -6,3 +7,7 @@ userdebug_or_eng(`
 dontaudit kernel self:qipcrtr_socket create;
 
 allow kernel per_boot_file:file r_file_perms;
+
+allow kernel self:qipcrtr_socket { create };
+allow kernel self:capability { kill };
+

@@ -1,1 +1,5 @@
+
 binder_call(system_app, hal_wifi_supplicant_default)
+
+allow hal_wifi_supplicant_default self:capability { sys_admin };
+

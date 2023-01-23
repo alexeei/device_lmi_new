@@ -5,7 +5,7 @@
 #
 
 # Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 
 # Setup dalvik vm configs
@@ -13,6 +13,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
+
+# Mindgapps
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+
 
 # HIDL HALs
 $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
@@ -147,6 +151,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libsndmonitor \
     libtinycompress \
+    audioadsprpcd \
     libvolumelistener
     
 # Audio-Legacy | From hardware/qcom-caf/sm8250/audio/configs/kona/kona.mk
@@ -521,8 +526,8 @@ PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor
 
 # Remove Unwanted Packages
-PRODUCT_PACKAGES += \
-    RemovePackages
+#PRODUCT_PACKAGES += \
+ #   RemovePackages
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -557,6 +562,11 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Nexuslauncher \
     Smart Launcher \
     lawnchair
+
+PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
+
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
 # Smart IDLE Maintaince
 PRODUCT_SYSTEM_PROPERTIES += \

@@ -25,56 +25,34 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.INJECT_EVENTS" />
 
     <uses-sdk
-        android:minSdkVersion="30"
+        android:minSdkVersion="24"
         android:targetSdkVersion="30"/>
 
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/device_settings_app_name"
-        android:persistent="true"
-        android:theme="@style/Theme.SubSettingsBase"
-        android:defaultToDeviceProtectedStorage="true"
-        android:directBootAware="true">
+        android:persistent="true">
+        
+        <receiver android:name=".BootCompletedReceiver" android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>        
        
        <!-- DeviceExtras -->
-        <activity
-            android:name=".DeviceExtrasActivity"
-            android:exported="true"
-            android:label="@string/device_title">
-
-            <intent-filter>
-                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
-            </intent-filter>
-
-        </activity>
+        <activity android:name=".DeviceExtrasActivity" />
 
         <activity android:name=".DeviceExtras" />
 
-        <service
-            android:name=".DeviceExtrasTileService"
-            android:exported="true"
-            android:icon="@drawable/ic_settings_device"
-            android:label="@string/device_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
-        <receiver android:name=".BootCompletedReceiver" android:exported="false">
-            <intent-filter android:priority="1000">
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
         
          <!-- TTL Tile -->
         <service
             android:name=".TTLTileService"
-            android:exported="true"
             android:icon="@drawable/ic_linux"
             android:label="@string/ttl_tile_label"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -86,7 +64,6 @@
         
         <service
             android:name=".display.DcDimmingTileService"
-            android:exported="true"
             android:label="@string/dc_dimming_enable_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
@@ -95,16 +72,9 @@
             </intent-filter>
         </service>
         
-        <receiver android:name=".Startup" android:exported="false">
-            android:enabled="true">
-            <intent-filter android:priority="100">
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
         
         <activity
             android:name=".display.DcDimmingSettingsActivity"
-            android:exported="true"
             android:label="@string/dc_dimming_enable_title"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
@@ -121,7 +91,6 @@
         
         <activity
             android:name=".touchsampling.TouchSamplingSettingsActivity"
-            android:exported="true"
             android:label="@string/htsr_title"
             android:theme="@style/Theme.SubSettingsBase" >
             <intent-filter>
@@ -137,7 +106,6 @@
 
         <activity
             android:name=".fch.FchSettingsActivity"
-            android:exported="true"
             android:label="@string/fch_title"
             android:theme="@style/Theme.SubSettingsBase" >
             <intent-filter>
@@ -155,12 +123,10 @@
         <!-- Popup camera -->
         <service
             android:name=".popupcamera.PopupCameraService"
-            android:exported="true"
             android:permission="PopupCameraService" >
         </service>
         <activity
             android:name=".popupcamera.PopupCameraSettingsActivity"
-            android:exported="true"
             android:icon="@drawable/ic_settings_popup"
             android:label="@string/popup_title"
             android:theme="@style/Theme.SubSettingsBase" >
@@ -181,7 +147,6 @@
         <!-- Clear speaker -->
         <activity
             android:name=".speaker.ClearSpeakerActivity"
-            android:exported="true"
             android:icon="@drawable/ic_clear_speaker"
             android:label="@string/clear_speaker_title"
             android:theme="@style/Theme.SubSettingsBase">
