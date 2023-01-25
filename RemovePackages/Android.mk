@@ -124,6 +124,7 @@ LOCAL_MODULE_TAGS := optional
     # Wellbeing ################################
 #    WellbeingPrebuilt
 LOCAL_OVERRIDES_PACKAGES := \
+    AndroidAutoStubPrebuilt \
     CarrierMetrics \
     Chrome \
     Chrome-Stub \
@@ -186,7 +187,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     MicropaperPrebuilt \
     PrebuiltGoogleTelemetryTvp \
     EmergencyInfoGoogleNoUi \
-    Flipendo \
     MaestroPrebuilt \
     OdadPrebuilt \
     SecurityHubPrebuilt \
