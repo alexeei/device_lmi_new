@@ -88,6 +88,7 @@ persist.vendor.qti.telephony.vt_cam_interface=2
 # IOP
 vendor.iop.enable_prefetch_ofr=1
 vendor.iop.enable_uxe=1
+ro.vendor.qti.sys.fw.bg_apps_limit=40
 
 # Netmgr
 persist.vendor.data.iwlan.enable=true

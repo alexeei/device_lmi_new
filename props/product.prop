@@ -9,4 +9,30 @@ ro.af.client_heap_size_kbyte=7168
 persist.sys.fuse.passthrough.enable=true
 
 # Memory management
-persist.sys.fw.bg_apps_limit=96
+#persist.sys.fw.bg_apps_limit=96
+
+# Cached app compaction
+persist.device_config.activity_manager.use_compaction=true
+
+
+# Memory Management
+ro.config.fha_enable=true 
+ro.sys.fw.bg_apps_limit=32 
+ro.config.dha_cached_max=16 
+ro.config.dha_empty_max=42 
+ro.config.dha_empty_init=32 
+ro.config.dha_lmk_scale=0.545 
+ro.config.dha_th_rate=2.3 
+ro.config.sdha_apps_bg_max=64 
+ro.config.sdha_apps_bg_min=8
+
+# Memory management
+persist.sys.fw.bg_apps_limit?=48
+persist.sys.fw.use_trim_settings?=true
+persist.sys.fw.empty_app_percent?=50
+persist.sys.fw.trim_empty_percent?=100
+persist.sys.fw.trim_cache_percent?=100
+persist.sys.fw.trim_enable_memory?=2147483648
+persist.sys.fw.bservice_age?=120000
+persist.sys.fw.bservice_limit?=6
+persist.sys.fw.bservice_enable?=true
