@@ -39,9 +39,9 @@ vendor.panel.display                        u:object_r:vendor_panel_prop:s0
 vendor.panel.touch_vendor                   u:object_r:vendor_panel_prop:s0
 vendor.panel.vendor                         u:object_r:vendor_panel_prop:s0
 
-# Radio
-ro.vendor.ril.svlte1x                           u:object_r:vendor_radio_prop:s0
-ro.vendor.ril.svdo                              u:object_r:vendor_radio_prop:s0
+# RIL
+ro.vendor.ril                               u:object_r:vendor_public_vendor_default_prop:s0
+vendor.ril.                                 u:object_r:vendor_radio_prop:s0
 
 # Sensors
 persist.sensor.sardisable                   u:object_r:vendor_sensors_prop:s0
