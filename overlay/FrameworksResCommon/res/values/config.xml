@@ -255,6 +255,9 @@
     -->
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
+    <!-- Set the default dialer package name. -->
+    <string name="config_defaultDialer" translatable="false">com.google.android.dialer</string>
+
     <!-- Boolean indicating if restoring network selection should be
          skipped, the restoring is handled by modem if true. -->
     <bool name="skip_restoring_network_selection">true</bool>

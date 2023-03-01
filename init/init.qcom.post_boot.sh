@@ -183,6 +183,11 @@ case "$target" in
 	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 	echo 400000000 > /proc/sys/kernel/sched_coloc_downmigrate_ns
 
+    #gpu
+    echo "195" > /sys/class/kgsl/kgsl-3d0/min_clock_mhz
+    echo "195000000" > /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    echo "195000000" > /sys/class/kgsl/kgsl-3d0/min_gpuclk
+
 	# cpuset parameters
         echo 1-2     > /dev/cpuset/audio-app/cpus
 	echo 0-2     > /dev/cpuset/background/cpus

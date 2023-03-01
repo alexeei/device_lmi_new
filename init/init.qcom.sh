@@ -50,3 +50,8 @@ if [ ! -f /vendor/firmware_mnt/verinfo/ver_info.txt -o "$prev_version_info" != "
 fi
 chmod g-w /data/vendor/modem_config
 setprop ro.vendor.ril.mbn_copy_completed 1
+
+#gpu
+    echo "195" > /sys/class/kgsl/kgsl-3d0/min_clock_mhz
+    echo "195000000" > /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    echo "195000000" > /sys/class/kgsl/kgsl-3d0/min_gpuclk

@@ -653,6 +653,31 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     oneshot
 
 on property:sys.boot_completed=1
+    
+   chmod 644 /sys/class/kgsl/kgsl-3d0/devfreq/max_pwrlevel
+   chmod 644 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+   chmod 644 /sys/class/kgsl/kgsl-3d0/min_gpuclk
+   chmod 644 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+   chmod 644 /sys/class/kgsl/kgsl-3d0/max_gpuclk
+   chmod 644 /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
+   chmod 644 /sys/class/kgsl/kgsl-3d0/throttling
+   chmod 644 /sys/class/kgsl/kgsl-3d0/bus_split
+   chmod 644 /sys/class/kgsl/kgsl-3d0/force_bus_on
+   chmod 644 /sys/class/kgsl/kgsl-3d0/force_rail_on
+   chmod 644 /sys/class/kgsl/kgsl-3d0/force_clk_on
+
+   chmod 644 /dev/cpuset/top-app/cpus
+   chmod 644 /dev/cpuset/foreground/cpus
+   chmod 644 /dev/cpuset/background/cpus
+   chmod 644 /dev/cpuset/system-background/cpus
+   chmod 644 /dev/cpuset/restricted/cpus
+   write  /sys/class/kgsl/kgsl-3d0/min_clock_mhz 150
+   write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 150000000
+   write /sys/class/kgsl/kgsl-3d0/min_gpuclk 150000000
+   write /sys/class/kgsl/kgsl-3d0/max_pwrlevel 0
+   write /sys/class/kgsl/kgsl-3d0/max_clock_mhz 670
+   write  /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 670000000
+   write  /sys/class/kgsl/kgsl-3d0/max_gpuclk 670000000
     start qcom-post-boot
 
 on property:ro.vendor.ril.mbn_copy_completed=1

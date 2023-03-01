@@ -15,7 +15,7 @@
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
 
 # Mindgapps
-$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+#$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
 
 
 # HIDL HALs
@@ -506,7 +506,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2 \
     android.hardware.power@1.2.vendor \
-    android.hardware.power-service.lmi-libperfmgr
+    android.hardware.power-service.xiaomi-libperfmgr
    
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json 
@@ -527,7 +527,7 @@ PRODUCT_PACKAGES += \
 
 # Remove Unwanted Packages
 #PRODUCT_PACKAGES += \
- #   RemovePackages
+  #  RemovePackages
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -614,6 +614,8 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh
 
 PRODUCT_SOONG_NAMESPACES += \
+    hardware/google/interfaces \
+    hardware/google/pixel \
     vendor/qcom/opensource/usb/etc
 
 # Vendor service manager

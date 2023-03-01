@@ -18,22 +18,53 @@
 
 #include "Power.h"
 
-#include <mutex>
-
 #include <android-base/file.h>
 #include <android-base/logging.h>
 #include <android-base/properties.h>
 #include <android-base/stringprintf.h>
 #include <android-base/strings.h>
-
+#include <linux/input.h>
+#include <perfmgr/HintManager.h>
 #include <utils/Log.h>
+
+#include <mutex>
 
 #include "PowerHintSession.h"
 #include "PowerSessionManager.h"
 
-#ifndef TAP_TO_WAKE_NODE
-#define TAP_TO_WAKE_NODE "/sys/touchpanel/double_tap"
-#endif
+namespace {
+int open_ts_input() {
+    int fd = -1;
+    DIR* dir = opendir("/dev/input");
+
+    if (dir != NULL) {
+        struct dirent* ent;
+
+        while ((ent = readdir(dir)) != NULL) {
+            if (ent->d_type == DT_CHR) {
+                char absolute_path[PATH_MAX] = {0};
+                char name[80] = {0};
+
+                strcpy(absolute_path, "/dev/input/");
+                strcat(absolute_path, ent->d_name);
+
+                fd = open(absolute_path, O_RDWR);
+                if (ioctl(fd, EVIOCGNAME(sizeof(name) - 1), &name) > 0) {
+                    if (strcmp(name, "fts_ts") == 0)
+                        break;
+                }
+
+                close(fd);
+                fd = -1;
+            }
+        }
+
+        closedir(dir);
+    }
+
+    return fd;
+}
+}  // anonymous namespace
 
 namespace aidl {
 namespace google {
@@ -42,28 +73,27 @@ namespace power {
 namespace impl {
 namespace pixel {
 
+static constexpr int kInputEventWakeupModeOff = 4;
+static constexpr int kInputEventWakeupModeOn = 5;
+
 using ::aidl::google::hardware::power::impl::pixel::PowerHintSession;
+using ::android::perfmgr::HintManager;
 
 constexpr char kPowerHalStateProp[] = "vendor.powerhal.state";
 constexpr char kPowerHalAudioProp[] = "vendor.powerhal.audio";
 constexpr char kPowerHalRenderingProp[] = "vendor.powerhal.rendering";
-constexpr char kPowerHalAdpfRateProp[] = "vendor.powerhal.adpf.rate";
-constexpr int64_t kPowerHalAdpfRateDefault = -1;
 
-Power::Power(std::shared_ptr<HintManager> hm)
-    : mHintManager(hm),
+Power::Power(std::shared_ptr<AdaptiveCpu> adaptiveCpu)
+    : mAdaptiveCpu(adaptiveCpu),
       mInteractionHandler(nullptr),
-      mSustainedPerfModeOn(false),
-      mBatterySaverOn(false),
-      mAdpfRateNs(
-              ::android::base::GetIntProperty(kPowerHalAdpfRateProp, kPowerHalAdpfRateDefault)) {
-    mInteractionHandler = std::make_unique<InteractionHandler>(mHintManager);
+      mSustainedPerfModeOn(false) {
+    mInteractionHandler = std::make_unique<InteractionHandler>();
     mInteractionHandler->Init();
 
     std::string state = ::android::base::GetProperty(kPowerHalStateProp, "");
     if (state == "SUSTAINED_PERFORMANCE") {
         LOG(INFO) << "Initialize with SUSTAINED_PERFORMANCE on";
-        mHintManager->DoHint("SUSTAINED_PERFORMANCE");
+        HintManager::GetInstance()->DoHint("SUSTAINED_PERFORMANCE");
         mSustainedPerfModeOn = true;
     } else {
         LOG(INFO) << "Initialize PowerHAL";
@@ -72,53 +102,48 @@ Power::Power(std::shared_ptr<HintManager> hm)
     state = ::android::base::GetProperty(kPowerHalAudioProp, "");
     if (state == "AUDIO_STREAMING_LOW_LATENCY") {
         LOG(INFO) << "Initialize with AUDIO_LOW_LATENCY on";
-        mHintManager->DoHint(state);
+        HintManager::GetInstance()->DoHint(state);
     }
 
     state = ::android::base::GetProperty(kPowerHalRenderingProp, "");
     if (state == "EXPENSIVE_RENDERING") {
         LOG(INFO) << "Initialize with EXPENSIVE_RENDERING on";
-        mHintManager->DoHint("EXPENSIVE_RENDERING");
-    }
-
-    // Now start to take powerhint
-    LOG(INFO) << "PowerHAL ready to take hints, Adpf update rate: " << mAdpfRateNs;
-}
-
-void endAllHints(std::shared_ptr<HintManager> mHintManager) {
-    for (std::string hint: mHintManager->GetHints()) {
-        mHintManager->EndHint(hint);
+        HintManager::GetInstance()->DoHint("EXPENSIVE_RENDERING");
     }
 }
 
 ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     LOG(DEBUG) << "Power setMode: " << toString(type) << " to: " << enabled;
-    PowerSessionManager::getInstance()->updateHintMode(toString(type), enabled);
+    if (HintManager::GetInstance()->GetAdpfProfile() &&
+        HintManager::GetInstance()->GetAdpfProfile()->mReportingRateLimitNs > 0) {
+        PowerSessionManager::getInstance()->updateHintMode(toString(type), enabled);
+    }
     switch (type) {
-        case Mode::DOUBLE_TAP_TO_WAKE:
-            {
-            ::android::base::WriteStringToFile(enabled ? "1" : "0", TAP_TO_WAKE_NODE, true);
-            [[fallthrough]];
+        case Mode::DOUBLE_TAP_TO_WAKE: {
+            int fd = open_ts_input();
+            if (fd == -1) {
+                LOG(WARNING)
+                    << "DT2W won't work because no supported touchscreen input devices were found";
+                break;
             }
+            struct input_event ev;
+            ev.type = EV_SYN;
+            ev.code = SYN_CONFIG;
+            ev.value = enabled ? kInputEventWakeupModeOn : kInputEventWakeupModeOff;
+            write(fd, &ev, sizeof(ev));
+            close(fd);
+            break;
+        }
         case Mode::SUSTAINED_PERFORMANCE:
             if (enabled) {
-                endAllHints(mHintManager);
-                mHintManager->DoHint("SUSTAINED_PERFORMANCE");
-            } else {
-                mHintManager->EndHint("SUSTAINED_PERFORMANCE");
+                HintManager::GetInstance()->DoHint("SUSTAINED_PERFORMANCE");
             }
-            mSustainedPerfModeOn = enabled;
-            break;
-        case Mode::LOW_POWER:
-            if (enabled) {
-                endAllHints(mHintManager);
-                mHintManager->DoHint("LOW_POWER");
-            } else {
-                mHintManager->EndHint("LOW_POWER");
-            }
-            mBatterySaverOn = enabled;
+            mSustainedPerfModeOn = true;
             break;
         case Mode::LAUNCH:
+            if (mSustainedPerfModeOn) {
+                break;
+            }
             [[fallthrough]];
         case Mode::FIXED_PERFORMANCE:
             [[fallthrough]];
@@ -132,14 +157,13 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
             [[fallthrough]];
         case Mode::AUDIO_STREAMING_LOW_LATENCY:
             [[fallthrough]];
+        case Mode::GAME_LOADING:
+            [[fallthrough]];
         default:
-            if (mBatterySaverOn || mSustainedPerfModeOn) {
-                break;
-            }
             if (enabled) {
-                mHintManager->DoHint(toString(type));
+                HintManager::GetInstance()->DoHint(toString(type));
             } else {
-                mHintManager->EndHint(toString(type));
+                HintManager::GetInstance()->EndHint(toString(type));
             }
             break;
     }
@@ -148,9 +172,8 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
 }
 
 ndk::ScopedAStatus Power::isModeSupported(Mode type, bool *_aidl_return) {
-    bool supported = mHintManager->IsHintSupported(toString(type));
-    if (type == Mode::DOUBLE_TAP_TO_WAKE)
-    {
+    bool supported = HintManager::GetInstance()->IsHintSupported(toString(type));
+    if (type == Mode::DOUBLE_TAP_TO_WAKE) {
         supported = true;
     }
     LOG(INFO) << "Power mode " << toString(type) << " isModeSupported: " << supported;
@@ -160,9 +183,13 @@ ndk::ScopedAStatus Power::isModeSupported(Mode type, bool *_aidl_return) {
 
 ndk::ScopedAStatus Power::setBoost(Boost type, int32_t durationMs) {
     LOG(DEBUG) << "Power setBoost: " << toString(type) << " duration: " << durationMs;
+    if (HintManager::GetInstance()->GetAdpfProfile() &&
+        HintManager::GetInstance()->GetAdpfProfile()->mReportingRateLimitNs > 0) {
+        PowerSessionManager::getInstance()->updateHintBoost(toString(type), durationMs);
+    }
     switch (type) {
         case Boost::INTERACTION:
-            if (mSustainedPerfModeOn || mBatterySaverOn) {
+            if (mSustainedPerfModeOn) {
                 break;
             }
             mInteractionHandler->Acquire(durationMs);
@@ -174,15 +201,16 @@ ndk::ScopedAStatus Power::setBoost(Boost type, int32_t durationMs) {
         case Boost::AUDIO_LAUNCH:
             [[fallthrough]];
         default:
-            if (mSustainedPerfModeOn || mBatterySaverOn) {
+            if (mSustainedPerfModeOn) {
                 break;
             }
             if (durationMs > 0) {
-                mHintManager->DoHint(toString(type), std::chrono::milliseconds(durationMs));
+                HintManager::GetInstance()->DoHint(toString(type),
+                                                   std::chrono::milliseconds(durationMs));
             } else if (durationMs == 0) {
-                mHintManager->DoHint(toString(type));
+                HintManager::GetInstance()->DoHint(toString(type));
             } else {
-                mHintManager->EndHint(toString(type));
+                HintManager::GetInstance()->EndHint(toString(type));
             }
             break;
     }
@@ -191,7 +219,7 @@ ndk::ScopedAStatus Power::setBoost(Boost type, int32_t durationMs) {
 }
 
 ndk::ScopedAStatus Power::isBoostSupported(Boost type, bool *_aidl_return) {
-    bool supported = mHintManager->IsHintSupported(toString(type));
+    bool supported = HintManager::GetInstance()->IsHintSupported(toString(type));
     LOG(INFO) << "Power boost " << toString(type) << " isBoostSupported: " << supported;
     *_aidl_return = supported;
     return ndk::ScopedAStatus::ok();
@@ -204,13 +232,13 @@ constexpr const char *boolToString(bool b) {
 binder_status_t Power::dump(int fd, const char **, uint32_t) {
     std::string buf(::android::base::StringPrintf(
             "HintManager Running: %s\n"
-            "SustainedPerformanceMode: %s\n"
-            "BatterySaverMode: %s\n",
-            boolToString(mHintManager->IsRunning()),
-            boolToString(mSustainedPerfModeOn),
-            boolToString(mBatterySaverOn)));
+            "SustainedPerformanceMode: %s\n",
+            boolToString(HintManager::GetInstance()->IsRunning()),
+            boolToString(mSustainedPerfModeOn)));
     // Dump nodes through libperfmgr
-    mHintManager->DumpToFd(fd);
+    HintManager::GetInstance()->DumpToFd(fd);
+    PowerSessionManager::getInstance()->dumpToFd(fd);
+    mAdaptiveCpu->DumpToFd(fd);
     if (!::android::base::WriteStringToFd(buf, fd)) {
         PLOG(ERROR) << "Failed to dump state to fd";
     }
@@ -222,7 +250,8 @@ ndk::ScopedAStatus Power::createHintSession(int32_t tgid, int32_t uid,
                                             const std::vector<int32_t> &threadIds,
                                             int64_t durationNanos,
                                             std::shared_ptr<IPowerHintSession> *_aidl_return) {
-    if (mAdpfRateNs <= 0) {
+    if (!HintManager::GetInstance()->GetAdpfProfile() ||
+        HintManager::GetInstance()->GetAdpfProfile()->mReportingRateLimitNs <= 0) {
         *_aidl_return = nullptr;
         return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
     }
@@ -232,14 +261,16 @@ ndk::ScopedAStatus Power::createHintSession(int32_t tgid, int32_t uid,
         return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
     }
     std::shared_ptr<IPowerHintSession> session = ndk::SharedRefBase::make<PowerHintSession>(
-            tgid, uid, threadIds, durationNanos, nanoseconds(mAdpfRateNs));
+            mAdaptiveCpu, tgid, uid, threadIds, durationNanos);
     *_aidl_return = session;
     return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus Power::getHintSessionPreferredRate(int64_t *outNanoseconds) {
-    *outNanoseconds = mAdpfRateNs;
-    if (mAdpfRateNs <= 0) {
+    *outNanoseconds = HintManager::GetInstance()->GetAdpfProfile()
+                              ? HintManager::GetInstance()->GetAdpfProfile()->mReportingRateLimitNs
+                              : 0;
+    if (*outNanoseconds <= 0) {
         return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
     }
 
