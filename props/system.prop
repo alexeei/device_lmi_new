@@ -48,6 +48,7 @@ debug.sf.latch_unsignaled=1
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
 ro.config.avoid_gfx_accel=true
+ro.sf.force_hwc_brightness=1
 
 #Disable MTE Async for system server
 arm64.memtag.process.system_server=off
