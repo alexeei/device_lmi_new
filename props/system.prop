@@ -40,7 +40,7 @@ suspend.max_sleep_time_millis=40000
 
 # Display
 debug.cpurend.vsync=false
-#debug.gralloc.gfx_ubwc_disable=0
+debug.gralloc.gfx_ubwc_disable=0
 persist.vendor.color.matrix=2
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_hwc_vds=0
@@ -57,9 +57,9 @@ ro.launcher.blur.appLaunch=0
 
 
 # SkiaGL Threaded
-#debug.renderengine.backend=skiaglthreaded
-debug.hwui.renderer=skiavk 
-#renderthread.skia.reduceopstasksplitting=true 
+debug.renderengine.backend=skiaglthreaded
+debug.hwui.renderer=opengl
+renderthread.skia.reduceopstasksplitting=true 
 #debug.hwc.force_gpu=1
 
 # Disable Skia tracing by default
