@@ -55,7 +55,6 @@ on boot
     mkdir /mnt/vendor/persist/camera 0755 system cameraserver
     chmod 0444 /sys/class/drm/card0-DSI-1/panel_info
     chown system system /sys/class/drm/card0-DSI-1/panel_info
-    chown system system /sys/touchpanel/double_tap
     chmod 0664 /sys/class/power_supply/battery/dc_thermal_levels
     chmod 0664 /sys/class/thermal/thermal_message/sconfig
     chown system system /sys/class/thermal/thermal_message/sconfig

@@ -147,7 +147,6 @@ on boot
     chmod 0664 /sys/kernel/fast_charge/force_fast_charge
     
     #Dt2w
-    chown system system /sys/touchpanel/double_tap
     chmod 0664 /sys/touchpanel/double_tap
     
     #libperfmgr denials
