@@ -155,6 +155,8 @@ vendor.gatekeeper.disable_spu=true
 
 # Graphics
 debug.sf.predict_hwc_composition_strategy=0
+debug.gralloc.enable_fb_ubwc=1
+debug.mdpcomp.logs=0
 persist.sys.sf.color_mode=9
 persist.sys.sf.color_saturation=1.0
 #debug.sf.auto_latch_unsignaled=true
@@ -162,11 +164,13 @@ persist.sys.sf.color_mode=9
 persist.sys.sf.native_mode=0
 ro.surface_flinger.use_color_management=true
 debug.sf.enable_gl_backpressure=1
+debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
 debug.sf.high_fps_early_phase_offset_ns=-4000000
 debug.sf.high_fps_late_app_phase_offset_ns=1000000
 debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 ro.surface_flinger.protected_contents=true
+debug.sf.hw=1
 
 
 
@@ -198,7 +202,7 @@ ro.netflix.bsp_rev=Q8250-19134-1
 ro.camera.notify_nfc=1
 
 # Netmgr
-persist.vendor.data.iwlan.enable=true
+#persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 ro.vendor.use_data_netmgrd=true
 
@@ -242,6 +246,15 @@ ro.vendor.radio.5g=3
 telephony.lteOnCdmaDevice=1
 persist.vendor.radio.NO_STAPA=1
 persist.vendor.radio.VT_HYBRID_ENABLE=1
+persist.radio.dynamic_sar=false
+
+
+# Sensors
+persist.vendor.sensors.allow_non_default_discovery=true
+persist.vendor.sensors.sync_request=true
+
+# Shutdown
+sys.vendor.shutdown.waittime=500
 
 # SoC
 ro.soc.manufacturer=Qualcomm
@@ -277,6 +290,9 @@ ro.hardware.wlan.dbs=2
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
 ro.zram.periodic_wb_delay_hours=24
+
+# WiFi
+wifi.aware.interface=wifi-aware0
 
 # Vulkan
 ro.hardware.vulkan=adreno
