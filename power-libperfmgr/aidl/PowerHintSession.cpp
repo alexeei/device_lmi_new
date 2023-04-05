@@ -421,6 +421,13 @@ void PowerHintSession::wakeup() {
         return;
     }
         return;
+    }
+    // Update session's timer
+    mStaleTimerHandler->updateTimer();
+    // Skip uclamp update for stale session
+    if (!isTimeout()) {
+        return;
+    }
     if (ATRACE_ENABLED()) {
         std::string tag = StringPrintf("wakeup.%s(a:%d,s:%d)", getIdString().c_str(), isActive(),
                                        isTimeout());
