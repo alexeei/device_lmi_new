@@ -575,13 +575,14 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1 \
     libsensorndkbridge
 
-# Shims
-PRODUCT_PACKAGES += \
-    lib-watermarkshim \
-#    libcameraservice_shim
+
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 30
+
+# Shims
+PRODUCT_PACKAGES += \
+    lib-watermarkshim 
 
 # Speed up
 PRODUCT_DEXPREOPT_SPEED_APPS += \
