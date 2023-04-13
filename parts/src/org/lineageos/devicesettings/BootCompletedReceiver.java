@@ -31,6 +31,7 @@ import org.lineageos.devicesettings.popupcamera.PopupCameraUtils;
 import org.lineageos.devicesettings.touchsampling.TouchSamplingUtils;
 import org.lineageos.devicesettings.fch.FchUtils;
 
+
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = false;

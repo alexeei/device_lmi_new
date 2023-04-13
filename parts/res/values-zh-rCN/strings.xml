@@ -15,7 +15,6 @@
      limitations under the License.
 -->
 <resources>
-
     <!-- Popup camera -->
     <string name="popup_title">前置摄像头设置</string>
     <string name="popup_led_title">相机指示灯</string>

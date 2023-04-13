@@ -56,15 +56,13 @@ fi
 function blob_fixup() {
     case "${1}" in
         vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
-            hexdump -ve '1/1 "%.2X"' "${2}" | sed "s/210080529A0A0094/210080521F2003D5/g" | xxd -r -p > "${TMPDIR}/${1##*/}"
+            hexdump -ve '1/1 "%.2X"' "${2}" | sed "s/9A0A0094CE1640F9/1F2003D5CE1640F9/g" | xxd -r -p > "${TMPDIR}/${1##*/}"
             mv "${TMPDIR}/${1##*/}" "${2}"
             ;;
         vendor/lib64/camera/components/com.mi.node.watermark.so)
             "${PATCHELF}" --add-needed "lib-watermarkshim.so" "${2}"
             ;;
-        lib64/libcameraservice.so)
-            "${PATCHELF}" --add-needed "libcameraservice_shim.so" "${2}"
-            ;;
+        
     esac
 }
 
