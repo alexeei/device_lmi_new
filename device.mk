@@ -580,7 +580,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUIGoogle \
     GoogleServicesFramework \
     Nexuslauncher \
-    Smart Launcher \
+    ginlemon.flowerfree \
     lawnchair
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -622,6 +622,7 @@ PRODUCT_BOOT_JARS += \
 
 # Thermal
 PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0 \
     android.hardware.thermal@2.0-service.qti
 
 # Touchscreen
