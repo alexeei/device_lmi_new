@@ -62,6 +62,9 @@ function blob_fixup() {
         vendor/lib64/camera/components/com.mi.node.watermark.so)
             "${PATCHELF}" --add-needed "lib-watermarkshim.so" "${2}"
             ;;
+        lib64/libcameraservice.so)
+            "${PATCHELF}" --add-needed "libcameraservice_shim.so" "${2}"
+            ;;
     esac
 }
 

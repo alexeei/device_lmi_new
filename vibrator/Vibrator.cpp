@@ -40,6 +40,10 @@
 
 #include "include/Vibrator.h"
 
+#ifdef USE_EFFECT_STREAM
+#include "effect.h"
+#endif
+
 namespace aidl {
 namespace android {
 namespace hardware {

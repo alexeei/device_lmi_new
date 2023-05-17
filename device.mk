@@ -9,7 +9,7 @@
 
 
 # Setup dalvik vm configs
-#$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
@@ -271,7 +271,6 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
-    android.hardware.graphics.composer@2.1 \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
@@ -282,8 +281,10 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     memtrack.kona \
-    vendor.display.config@1.0 \
+    vendor.display.config@1.5 \
     vendor.display.config@1.11.vendor \
+    vendor.display.config@1.9 \
+    vendor.display.config@1.9.vendor \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator-service \
@@ -412,6 +413,9 @@ PRODUCT_PACKAGES += \
     libcodec2_soft_vp9enc \
     libcodec2_soft_hevcdec \
     libcodec2_soft_hevcenc
+
+# Miuicamera
+#$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
 
 # Net
 PRODUCT_PACKAGES += \
@@ -567,7 +571,8 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    lib-watermarkshim
+    lib-watermarkshim \
+#    libcameraservice_shim
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 30

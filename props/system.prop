@@ -21,8 +21,10 @@ ro.sf.blurs_are_expensive=1
 
 # Camera
 camera.disable_zsl_mode=true
+log.tag.CHIUSECASE=ERROR
 persist.vendor.camera.eis.enable=1
 persist.camera.facepp.fdenable=0
+persist.vendor.camera.privapp.list=com.android.camera
 vendor.camera.aux.packagelist=com.android.camera,com.google.android.GoogleCamera,org.codeaurora.snapcam
 
 
@@ -34,28 +36,38 @@ dalvik.vm.dex2oat64.enabled=true
 ro.sys.fw.dex2oat_thread_count=8
 
 # Adaptive Suspend
-suspend.short_suspend_threshold_millis=2000
-suspend.short_suspend_backoff_enabled=true
-suspend.max_sleep_time_millis=40000
+#suspend.short_suspend_threshold_millis=2000
+#suspend.short_suspend_backoff_enabled=true
+#suspend.max_sleep_time_millis=40000
 
 # Display
 debug.cpurend.vsync=false
 debug.gralloc.gfx_ubwc_disable=0
 persist.vendor.color.matrix=2
 debug.sf.disable_client_composition_cache=1
-debug.sf.enable_hwc_vds=0
-debug.sf.latch_unsignaled=1
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=0
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
-ro.config.avoid_gfx_accel=true
-ro.sf.force_hwc_brightness=1
+#ro.config.avoid_gfx_accel=true
+#ro.sf.force_hwc_brightness=1
 
 #Disable MTE Async for system server
-arm64.memtag.process.system_server=off
+arm64.memtag.process.system_server=async
+arm64.memtag.process.com.android.systemui=async
+arm64.memtag.process.org.telegram.plus=async
+arm64.memtag.process.org.skvalex.cr=async
+arm64.memtag.process.ru.homecredit.mycredit=async
+arm64.memtag.process.com.whatsapp=async
+arm64.memtag.process.org.android.launcher3=async
+
 
 # Disable blur on app launch
 ro.launcher.blur.appLaunch=0
 
+
+# Feature flags
+persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 
 # SkiaGL Threaded
 debug.renderengine.backend=skiaglthreaded

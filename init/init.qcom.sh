@@ -27,6 +27,12 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+export PATH=/vendor/bin
+
+# Store soc_id in ro.vendor.qti.soc_id
+soc_id=cat /sys/devices/soc0/soc_id 2> /dev/null
+setprop ro.vendor.qti.soc_id $soc_id
+
 #
 # Make modem config folder and copy firmware config to that folder for RIL
 #

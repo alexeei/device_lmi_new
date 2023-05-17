@@ -20,3 +20,5 @@ vendor.nxp.nxpese::INxpEse                                                      
 # TurboAdapter
 vendor.google.google_battery::IGoogleBattery                                    u:object_r:hal_turbo_adapter_hwservice:s0
 
+vendor.xiaomi.hardware.campostproc::IMiPostProcService                          u:object_r:hal_camerapostproc_xiaomi_hwservice:s0
+

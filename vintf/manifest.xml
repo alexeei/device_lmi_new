@@ -562,6 +562,15 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>camerapostprocservice</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.campostproc</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMiPostProcService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <!-- QCC HAL Service  -->
     <hal format="hidl">
         <name>vendor.qti.hardware.qccvndhal</name>

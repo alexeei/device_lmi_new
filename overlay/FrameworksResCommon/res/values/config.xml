@@ -326,5 +326,7 @@
 
     <!-- Configure emergency apn as empty(null) apn -->
     <string name="config_emergency_apn"></string>
+    <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
+    <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineageos.sensor.udfps</string>
 
 </resources>

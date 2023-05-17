@@ -113,6 +113,7 @@
 /data/vendor/mac_addr(/.*)?                                 u:object_r:vendor_wifi_vendor_data_file:s0
 /data/vendor/wlan_logs(/.*)?                                u:object_r:vendor_wifi_vendor_log_data_file:s0
 
+
 # Vibrator Permissions
 /sys/class/leds/vibrator_aw8697(/.*)?                                                   u:object_r:sysfs_leds:s0
 /sys/class/leds/vibrator(/.*)?                                                          u:object_r:sysfs_leds:s0
