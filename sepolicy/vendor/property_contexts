@@ -10,6 +10,7 @@ vendor.camera.boot_complete                 u:object_r:vendor_camera_prop:s0
 vendor.camera.aux.                          u:object_r:vendor_camera_prop:s0
 ro.vendor.camera.req.fmq.size               u:object_r:vendor_ro_camera_prop:s0
 ro.vendor.camera.res.fmq.size               u:object_r:vendor_ro_camera_prop:s0
+sys.camera.miui.apk                         u:object_r:exported_system_prop:s0
 
 # Fingerprint
 persist.vendor.fpc.                         u:object_r:vendor_fingerprint_prop:s0
