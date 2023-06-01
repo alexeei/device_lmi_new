@@ -1,3 +1,6 @@
+# APEX
+ro.apex.updatable=false
+
 # Audio
 audio.offload.buffer.size.kb=256
 audio.offload.gapless.enabled=true
