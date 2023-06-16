@@ -21,6 +21,10 @@ $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
 # HIDL HALs
 $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
+
+# APEX
+OVERRIDE_TARGET_FLATTEN_APEX := true
+
 # Platform
 PRODUCT_BOARD_PLATFORM := kona
 TARGET_BOARD_PLATFORM := kona

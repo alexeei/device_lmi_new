@@ -150,7 +150,7 @@ case "$target" in
 	ddr_type5="08"
 
 	# Core control parameters for gold
-	echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
+	echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
 	echo 60 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
 	echo 30 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
 	echo 100 > /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms
@@ -173,7 +173,7 @@ case "$target" in
 	echo 1 > /sys/devices/system/cpu/cpu7/core_ctl/nr_prev_assist_thresh
 
 	# Disable Core control on silver
-	echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
+	#echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
 
 	# Setting b.L scheduler parameters
 	echo 95 95 > /proc/sys/kernel/sched_upmigrate
@@ -184,17 +184,16 @@ case "$target" in
 	echo 400000000 > /proc/sys/kernel/sched_coloc_downmigrate_ns
 
     #gpu
-    echo "195" > /sys/class/kgsl/kgsl-3d0/min_clock_mhz
-    echo "195000000" > /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
-    echo "195000000" > /sys/class/kgsl/kgsl-3d0/min_gpuclk
 
 	# cpuset parameters
-        echo 1-2     > /dev/cpuset/audio-app/cpus
+    echo 1-2     > /dev/cpuset/audio-app/cpus
 	echo 0-2     > /dev/cpuset/background/cpus
 	echo 0-3     > /dev/cpuset/system-background/cpus
+    echo 0-3     > /dev/cpuset/restricted/cpus
 	echo 4-6     > /dev/cpuset/foreground/boost/cpus
 	echo 1-6     > /dev/cpuset/foreground/cpus
 	echo 0-7     > /dev/cpuset/top-app/cpus
+
 
 	# Turn off scheduler boost at the end
 	echo 0 > /proc/sys/kernel/sched_boost
@@ -308,8 +307,6 @@ case "$target" in
 	done
         # memlat specific settings are moved to seperate file under
         # device/target specific folder
-        setprop vendor.dcvs.prop 0
-	setprop vendor.dcvs.prop 1
     configure_memory_parameters
     ;;
 esac

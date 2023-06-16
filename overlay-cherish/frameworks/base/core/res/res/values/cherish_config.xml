@@ -29,7 +29,7 @@
     <string name="config_gamingmode_fpsInfoSysNode" translatable="false">/sys/class/drm/card0/sde-crtc-0/measured_fps</string>
     
     <!-- Whether the device supports Smart Pixels -->
-    <bool name="config_supportSmartPixels">true</bool>
+    <bool name="config_supportSmartPixels">false</bool>
 
     <!-- Smart charging -->
     <bool name="config_smartChargingAvailable">true</bool>
