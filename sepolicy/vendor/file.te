@@ -33,3 +33,4 @@ type vendor_thermal_data_file, file_type, data_file_type;
 type mdm_tombstone_data_file, data_file_type, file_type;
 
 type persist_wifi_file, file_type;
+type camera_persist_file, file_type, data_file_type;
