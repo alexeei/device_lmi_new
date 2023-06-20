@@ -314,6 +314,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# Fastcharge
+PRODUCT_PACKAGES += \
+    vendor.lineage.fastcharge@1.0-service.xiaomi_sm8250
+
 # Google Camera
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-com.google.android.GoogleCamera.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.google.android.GoogleCamera.xml \

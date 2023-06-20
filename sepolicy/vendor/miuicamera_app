@@ -1,0 +1,4 @@
+allow miuicamera_app {
+voiceinteraction_service
+cameraserver_service
+}:service_manager find;
