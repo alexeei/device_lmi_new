@@ -55,13 +55,8 @@ debug.hwui.target_cpu_time_percent=30
 #ro.sf.force_hwc_brightness=1
 
 #Disable MTE Async for system server
-arm64.memtag.process.system_server=async
-arm64.memtag.process.com.android.systemui=async
-arm64.memtag.process.org.telegram.plus=async
-arm64.memtag.process.org.skvalex.cr=async
-arm64.memtag.process.ru.homecredit.mycredit=async
-arm64.memtag.process.com.whatsapp=async
-arm64.memtag.process.org.android.launcher3=async
+arm64.memtag.process.system_server=off
+
 
 
 # Disable blur on app launch
