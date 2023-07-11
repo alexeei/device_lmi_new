@@ -200,8 +200,8 @@ case "$target" in
 
 	# configure governor settings for silver cluster
 	echo "schedhorizon" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
+	echo 15000 > /sys/devices/system/cpu/cpufreq/policy0/schedhorizon/down_rate_limit_us
+	echo 500 > /sys/devices/system/cpu/cpufreq/policy0/schedhorizon/up_rate_limit_us
         if [ $rev == "2.0" ] || [ $rev == "2.1" ]; then
 		echo 1248000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
 	else
