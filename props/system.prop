@@ -27,7 +27,7 @@ log.tag.CHIUSECASE=ERROR
 persist.vendor.camera.eis.enable=1
 persist.camera.facepp.fdenable=0
 persist.vendor.camera.privapp.list=com.android.camera
-vendor.camera.aux.packagelist=com.android.camera,com.google.android.GoogleCamera,org.codeaurora.snapcam
+#vendor.camera.aux.packagelist=com.android.camera,com.google.android.GoogleCamera,org.codeaurora.snapcam
 
 ro.product.mod_device=lmi_global
 
