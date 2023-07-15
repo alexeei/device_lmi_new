@@ -103,6 +103,7 @@ camera.disable_zsl_mode=true
 persist.camera.gyro.disable=0
 persist.vendor.camera.logInfoMask=false
 persist.vendor.camera.perflock.enable=0
+vendor.camera.hal1.packagelist=com.whatsapp,com.whatsapp.w4b,com.facebook.orca,com.instagram.android
 
 # Crypto
 ro.crypto.dm_default_key.options_format.version=2
