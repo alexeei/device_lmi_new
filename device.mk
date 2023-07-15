@@ -592,7 +592,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Shims
 PRODUCT_PACKAGES += \
-    lib-watermarkshim 
+    libpiex_shim
 
 # Speed up
 PRODUCT_DEXPREOPT_SPEED_APPS += \
