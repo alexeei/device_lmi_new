@@ -712,16 +712,17 @@ PRODUCT_COPY_FILES += \
 
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+    $(LOCAL_PATH)/aidl/vibrator/etc/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+
+
+# Target VNDK Fallback version
+PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32 33
   
 #VNDK
 PRODUCT_PACKAGES += \
     libstdc++ \
     libstdc++_vendor
 
-# Target VNDK Fallback version
-PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32 33
-  
 #Webview
 #PRODUCT_PACKAGES += bromite-webview    
 
