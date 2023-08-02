@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cherish_lmi.mk
+    $(LOCAL_DIR)/lineage_lmi.mk
 
 COMMON_LUNCH_CHOICES := \
-    cherish_lmi-eng \
-    cherish_lmi-user \
-    cherish_lmi-userdebug
+    lineage_lmi-eng \
+    lineage_lmi-user \
+    lineage_lmi-userdebug

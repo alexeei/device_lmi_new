@@ -37,13 +37,13 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_VARIANT := kryo585
+TARGET_CPU_VARIANT := kryo785
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := kryo585
+TARGET_2ND_CPU_VARIANT := kryo385
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := lmi
@@ -111,7 +111,7 @@ TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.xiaomi_lm
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/vintf/vendor_framework_compatibility_matrix.xml \
-    vendor/cherish/config/device_framework_matrix.xml
+    vendor/lineage/config/device_framework_matrix.xml
 
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vintf/manifest.xml
 

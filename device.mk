@@ -221,26 +221,17 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.bluetooth.audio@2.1-impl \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor \
-    vendor.qti.hardware.fm@1.0.vendor
+    vendor.qti.hardware.btconfigstore@2.0.vendor 
 
 # Bluetooth Library Deps
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    libbluetooth_audio_session \
-    libbthost_if.vendor \
-    libldacBT_bco \
-    libldacBT_bco.vendor \
-    liblhdc \
-    liblhdcBT_enc \
-    liblhdcdec \
-    liblhdcBT_dec
+    libbluetooth_audio_session 
 
 # Bluetooth Ant+ Hal Deps
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
-    com.dsi.ant.antradio_library \
     com.dsi.ant@1.0.vendor
 
 PRODUCT_PACKAGES += \
@@ -360,7 +351,6 @@ PRODUCT_PACKAGES += \
     init.mdm.sh \
     init.mi.btmac.sh \
     init.mi.usb.sh \
-    init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
     init.qcom.sh \
@@ -719,6 +709,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libnl \
-    libwfdaac \
-    libwfdaac_vendor \
-    libdisplayconfig.qti.vendor
+    libwfdaac_vendor 
