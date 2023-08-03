@@ -62,6 +62,12 @@ genfscon sysfs /devices/platform/soc/888000.i2c/i2c-5/5-0067/wakeup             
 genfscon sysfs /devices/platform/soc/888000.i2c/i2c-5/5-0061/wakeup                                                                         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/888000.i2c/i2c-5/5-0061/power_supply/rx1619/wakeup                                                     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/984000.i2c/i2c-0/0-0028/wakeup                                                                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-005a/wakeup                                                                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-3/3-005a/wakeup                                                                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a94000.i2c/i2c-4/4-0038/wakeup                                                                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a94000.i2c/i2c-4/4-0048/wakeup                                                                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/888000.i2c/i2c-8/8-0026/wakeup                                                                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-cdsp/wakeup                                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-dsps/wakeup                                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-npu/wakeup/wakeup68                                                                     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm8150@0:qcom,power-on@800/wakeup             u:object_r:sysfs_wakeup:s0
