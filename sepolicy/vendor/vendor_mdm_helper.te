@@ -31,6 +31,9 @@ allow vendor_mdm_helper vendor_mhi_device:chr_file rw_file_perms;
 allow vendor_mdm_helper block_device:dir rw_dir_perms;
 allow vendor_mdm_helper efs_boot_device:blk_file rw_file_perms;
 
+# Allow mdm_helper sys_admin capability
+allow vendor_mdm_helper self:capability { sys_admin };
+
 # Allow mdmhelper (kickstart) to use SDX55M tombstones
 allow vendor_mdm_helper mdm_tombstone_data_file:dir create_dir_perms;
 allow vendor_mdm_helper mdm_tombstone_data_file:dir rw_dir_perms;

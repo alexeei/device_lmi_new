@@ -1,5 +1,5 @@
 cc_binary {
-    name: "android.hardware.power-service.xiaomi-libperfmgr",
+    name: "android.hardware.power-service.xiaomi-lmi",
     relative_install_path: "hw",
     init_rc: ["aidl/android.hardware.power-service.xiaomi-libperfmgr.rc"],
     vintf_fragments: ["aidl/android.hardware.power-service.xiaomi.xml"],
