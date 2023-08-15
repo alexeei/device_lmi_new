@@ -139,7 +139,9 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_RAMDISK_USE_LZ4 := true
 TARGET_KERNEL_VERSION := 4.19
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/neutron-clang
+KERNEL_CC := CC=$(TARGET_KERNEL_CLANG_PATH)/bin/clang
 
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip 
@@ -150,7 +152,7 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM_IAS=1 \
     QCLinker=1
 TARGET_KERNEL_CLANG_VERSION := neutron
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/neutron-clang
+
 #SELINUX_IGNORE_NEVERALLOWS := true
 
 # Metadata

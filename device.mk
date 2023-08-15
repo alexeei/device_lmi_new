@@ -598,8 +598,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
     Launcher3 \
-    SettingsGoogle \
-    SystemUIGoogle \
+    Settings \
+    SystemUI \
     GoogleServicesFramework \
     Nexuslauncher \
     ginlemon.flowerfree \
