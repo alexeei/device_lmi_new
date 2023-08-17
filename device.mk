@@ -507,7 +507,7 @@ PRODUCT_PACKAGES += \
     libstagefright_foundation
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-cherish
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineageos
 
 
 
