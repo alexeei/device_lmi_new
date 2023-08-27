@@ -128,7 +128,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
     dalvik.vm.dexopt.secondary=true \
     dalvik.vm.dex2oat64.enabled=true \
-    dalvik.vm.systemuicompilerfilter=everything \
+    #dalvik.vm.systemuicompilerfilter=everything \
     persist.bg.dexopt.enable=true
 
 # Audio

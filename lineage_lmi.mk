@@ -14,7 +14,7 @@ $(call inherit-product, device/xiaomi/lmi/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-$(call inherit-product, vendor/gms/gms-vendor1.mk)
+$(call inherit-product, vendor/gms/common/common-vendor1.mk)
 
 # Set Boot Animination Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
@@ -36,7 +36,7 @@ TARGET_INCLUDE_GOOGLE_DESKCLOCK := false
 TARGET_INCLUDE_GOOGLE_DRIVE := false
 TARGET_INCLUDE_GMAIL := false
 TARGET_INCLUDE_GOOGLE_MAPS := false
-TARGET_INCLUDE_GOOGLE_PHOTOS := true
+TARGET_INCLUDE_GOOGLE_PHOTOS := false
 #TARGET_INCLUDE_GOOGLE_SETUP := true
 #CHERISH_VANILLA := true
 #TARGET_USES_MINI_GAPPS := true
@@ -48,7 +48,7 @@ EXTRA_UDFPS_ANIMATIONS := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_SUPPORTS_QUICK_TAP := false
 TARGET_SUPPORTS_GOOGLE_RECORDER := false
-TARGET_INCLUDE_PIXEL_FRAMEWORK := true
+#TARGET_INCLUDE_PIXEL_FRAMEWORK := true
 #PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
  #   ro.cherish.maintainer=a1exeei
 #CHERISH_BUILD_TYPE=OFFICIAL
