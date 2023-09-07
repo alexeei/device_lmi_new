@@ -124,7 +124,6 @@ LOCAL_MODULE_TAGS := optional
     # Wellbeing ################################
 #    WellbeingPrebuilt
 LOCAL_OVERRIDES_PACKAGES := \
-    AndroidAutoStubPrebuilt \
     CarrierMetrics \
     Chrome \
     Chrome-Stub \
@@ -162,7 +161,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     obdm_stub \
     PartnerSetupPrebuilt \
     Showcase \
-    Gallery2 \
     Drive \
     Ornament \
     Videos \
@@ -172,7 +170,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     Papers \
     GoogleTTS \
     AmbientStreaming \
-    AndroidAutoStubPrebuilt \
     CarrierSetup \
     GoogleFeedback \
     PixelSetupWizard \
@@ -181,7 +178,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     GooglePrintRecommendationService \
     TagGoogle \
     PrintSpooler \
-    SimAppDialog \
     Stk \
     BuiltInPrintservice \
     MicropaperPrebuilt \
@@ -202,7 +198,28 @@ LOCAL_OVERRIDES_PACKAGES := \
     PrebuiltDeskClockGoogle \
     SoundAmplifierPrebuilt \
     WellbeingPrebuilt \
-    Betterbug 
+    Betterbug \
+    AndroidPlatformServices \
+    CarrierServices \
+    ConfigUpdater \
+    DeviceIntelligenceNetworkPrebuilt \
+    DevicePersonalizationPrebuiltPixel2022 \
+    EmergencyInfoGms \
+    FamilyLinkParentalControls \
+    GoogleExtShared \
+    GoogleExtServices \
+    GoogleFeedback \
+    GoogleLocationHistory \
+    GooglePackageInstaller \
+    GooglePrintRecommendationService \
+    Messages \
+    PersonalSafety \
+    SpeechServicesByGoogle \
+    SettingsIntelligenceGooglePrebuilt \
+    SoundPickerPrebuilt \
+    TagGoogle \
+    Wellbeing 
+
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_SRC_FILES := /dev/null
