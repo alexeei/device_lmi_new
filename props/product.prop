@@ -12,6 +12,6 @@ ro.af.client_heap_size_kbyte=7168
 persist.sys.fuse.passthrough.enable=true
 
 # Memory management
-#persist.sys.fw.bg_apps_limit=96
+persist.sys.fw.bg_apps_limit=64
 
 

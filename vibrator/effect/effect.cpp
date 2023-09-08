@@ -44,37 +44,37 @@ static struct effect_stream effects[] = {
         .effect_id = 0,
         .data = 0,
         .length = 0,
-        .play_rate_hz = 48000,
+        .play_rate_hz = 24000,
     },
     {
         .effect_id = 1,
         .data = 0,
         .length = 0,
-        .play_rate_hz = 48000,
+        .play_rate_hz = 24000,
     },
     {
         .effect_id = 2,
         .data = 0,
         .length = 0,
-        .play_rate_hz = 48000,
+        .play_rate_hz = 24000,
     },
     {
         .effect_id = 3,
         .data = 0,
         .length = 0,
-        .play_rate_hz = 48000,
+        .play_rate_hz = 24000,
     },
     {
         .effect_id = 4,
         .data = 0,
         .length = 0,
-        .play_rate_hz = 48000,
+        .play_rate_hz = 24000,
     },
     {
         .effect_id = 5,
         .data = 0,
         .length = 0,
-        .play_rate_hz = 48000,
+        .play_rate_hz = 24000,
     },
 };
 

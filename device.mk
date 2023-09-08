@@ -122,7 +122,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-filter=speed \
     dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
     dalvik.vm.dex2oat-threads=8 \
-    dalvik.vm.image-dex2oat-threads=8
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.image-dex2oat-threads=8 \
+    ro.vendor.qti.am.reschedule_service=true \
+  #  ro.sys.fw.dex2oat_thread_count=8 \   
+   # dalvik.vm.dex2oat-threads=8 \
+    dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
+    dalvik.vm.dexopt.secondary=true \
+    persist.bg.dexopt.enable=true
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -278,6 +285,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     memtrack.kona \
+    android.hardware.graphics.allocator@3.0 \
+    android.hardware.graphics.allocator@3.0.vendor \
     vendor.display.config@1.5 \
     vendor.display.config@1.11.vendor \
     vendor.display.config@1.9 \

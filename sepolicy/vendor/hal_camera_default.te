@@ -29,4 +29,3 @@ add_hwservice(hal_camera_default, hal_camerapostproc_xiaomi_hwservice)
 
 set_prop(hal_camera_default, vendor_camera_prop)
 
-add_hwservice(hal_camera_default, hal_camerapostproc_xiaomi_hwservice)

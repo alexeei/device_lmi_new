@@ -36,7 +36,7 @@ ro.charger.disable_init_blank=true
 
 # Dexopt
 dalvik.vm.dex2oat64.enabled=true
-ro.sys.fw.dex2oat_thread_count=8
+#ro.sys.fw.dex2oat_thread_count=8
 
 # Adaptive Suspend
 #suspend.short_suspend_threshold_millis=2000
@@ -49,7 +49,7 @@ debug.gralloc.gfx_ubwc_disable=0
 persist.vendor.color.matrix=2
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_hwc_vds=1
-debug.sf.latch_unsignaled=0
+#debug.sf.latch_unsignaled=0
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
 #ro.config.avoid_gfx_accel=true
@@ -69,7 +69,7 @@ persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 
 # SkiaGL Threaded
 debug.renderengine.backend=skiaglthreaded
-debug.hwui.renderer=opengl
+debug.hwui.renderer=skiagl
 renderthread.skia.reduceopstasksplitting=true 
 #debug.hwc.force_gpu=1
 
