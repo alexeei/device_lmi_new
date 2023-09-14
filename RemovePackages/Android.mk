@@ -210,7 +210,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     GoogleExtServices \
     GoogleFeedback \
     GoogleLocationHistory \
-    GooglePackageInstaller \
     GooglePrintRecommendationService \
     Messages \
     PersonalSafety \

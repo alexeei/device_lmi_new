@@ -16,6 +16,7 @@ $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 $(call inherit-product, vendor/gms/common/common-vendor1.mk)
 
+
 # Set Boot Animination Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
 
@@ -27,7 +28,9 @@ PRODUCT_MODEL := POCO F2 Pro
 
 
 # GAPPS
+
 CHERISH_VANILLA := true
+
 #TARGET_USES_MINI_GAPPS := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 EXTRA_UDFPS_ANIMATIONS := true
