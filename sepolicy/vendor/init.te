@@ -1,3 +1,4 @@
+
 allow init proc_last_kmsg:file {
   r_file_perms
   setattr
@@ -8,7 +9,8 @@ allowxperm init per_boot_file:file ioctl { F2FS_IOC_SET_PIN_FILE };
 
 allow init adsprpcd_file:file mounton;
 
-set_prop(vendor_init, vendor_power_prop)
-
 # Allow Vendor_init set Radio Prop
 set_prop(vendor_init, vendor_radio_prop)
+
+allow vendor_init block_device:lnk_file setattr;
+
