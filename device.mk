@@ -36,6 +36,7 @@ TARGET_BOARD_PLATFORM := kona
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -363,6 +364,10 @@ PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1.vendor
+
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default   
@@ -511,10 +516,10 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineageos
 
 
-
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
+    AospNfcOverlayLmi \
     CarrierConfigResCommon \
     FrameworksResCommon \
     FrameworksResTarget \
