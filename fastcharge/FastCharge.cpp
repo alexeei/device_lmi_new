@@ -16,7 +16,7 @@
 
 #define LOG_TAG "fastcharge@1.0-service.xiaomi_sm8250"
 
-#define FASTCHARGE_DEFAULT_SETTING true
+#define FASTCHARGE_DEFAULT_SETTING false
 #define FASTCHARGE_PATH "/sys/class/qcom-battery/restrict_chg"
 
 #include "FastCharge.h"

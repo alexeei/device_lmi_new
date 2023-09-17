@@ -9,7 +9,7 @@
 
 
 # Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
@@ -88,15 +88,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
 
 
-# AAPT
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-
 
 # ART
 # Optimize everything for preopt
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
+PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 # Don't preopt prebuilts
 DONT_DEXPREOPT_PREBUILTS := true
 
@@ -116,19 +112,19 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # Dex
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.boot-dex2oat-cpu-set=1,2,3,4,5,6,7 \
+    dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
     dalvik.vm.image-dex2oat-filter=speed \
     dalvik.vm.boot-dex2oat-threads=8 \
     dalvik.vm.dex2oat-filter=speed \
     dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
     dalvik.vm.dex2oat-threads=8 \
-    dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.image-dex2oat-threads=8 \
     ro.vendor.qti.am.reschedule_service=true \
   #  ro.sys.fw.dex2oat_thread_count=8 \   
    # dalvik.vm.dex2oat-threads=8 \
     dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
     dalvik.vm.dexopt.secondary=true \
+    dalvik.vm.dex2oat64.enabled=true \
     persist.bg.dexopt.enable=true
 
 # Audio
@@ -603,10 +599,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3 \
     Settings \
     SystemUI \
-    GoogleServicesFramework \
-    Nexuslauncher \
-    ginlemon.flowerfree \
-    lawnchair
+    SettingsGoogle \
+    SystemUIGoogle 
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
