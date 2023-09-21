@@ -19,7 +19,7 @@
     <!-- Minimum interval (in milliseconds) needed to trigger doze pulsing
          on "Pickup up" gesture.
          Default: 2500 milliseconds (2.5 seconds * 1000) -->
-    <integer name="config_dozePulsePickup_MinPulseIntervalMs">3500</integer>
+    <integer name="config_dozePulsePickup_MinPulseIntervalMs">5500</integer>
 
     <!-- Timeout interval (in milliseconds) needed to wake up the screen
          after "Pickup up" gesture is triggered.
@@ -29,12 +29,12 @@
 
     <!-- The tilt sensor rate (in milliseconds) events are delivered at.
          Default: 100 milliseconds -->
-    <integer name="config_dozePulseTilt_BatchLatencyInMs">500</integer>
+    <integer name="config_dozePulseTilt_BatchLatencyInMs">700</integer>
 
     <!-- Minimum interval (in milliseconds) needed to trigger doze pulsing
          on "Tilt" gesture.
          Default: 2500 milliseconds (2.5 seconds * 1000) -->
-    <integer name="config_dozePulseTilt_MinPulseIntervalMs">3500</integer>
+    <integer name="config_dozePulseTilt_MinPulseIntervalMs">5500</integer>
 
     <!-- Timeout interval (in milliseconds) needed to wake up the screen
          after "Tilt" gesture is triggered.
@@ -42,7 +42,7 @@
     <integer name="config_dozePulseTilt_WakelockTimeoutMs">700</integer>
 
     <!-- Sensor trigger values -->
-    <item name="pickup_sensor_value" format="float" type="dimen">2.0</item>
+    <item name="pickup_sensor_value" format="float" type="dimen">10.0</item>
 
     <!-- Battery Health -->
     <string name="config_batteryCalculatedCapacity">/sys/class/power_supply/bms/charge_full</string>
