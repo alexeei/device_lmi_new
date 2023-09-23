@@ -42,7 +42,7 @@
     <integer name="config_dozePulseTilt_WakelockTimeoutMs">700</integer>
 
     <!-- Sensor trigger values -->
-    <item name="pickup_sensor_value" format="float" type="dimen">10.0</item>
+    <item name="pickup_sensor_value" format="float" type="dimen">20.0</item>
 
     <!-- Battery Health -->
     <string name="config_batteryCalculatedCapacity">/sys/class/power_supply/bms/charge_full</string>

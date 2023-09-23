@@ -64,6 +64,6 @@
     <bool name="config_bg_current_drain_auto_restrict_abusive_apps">true</bool>
 
     <!-- Color of the UDFPS Pressed view -->
-    <color name="config_udfpsColor">#00ffffff</color>
+    <color name="config_udfpsColor">#ffffff</color>
 
 </resources>
