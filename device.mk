@@ -101,8 +101,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     pm.dexopt.boot=verify \
     pm.dexopt.first-boot=quicken \
     pm.dexopt.install=speed-profile \
+    pm.dexopt.install-fast=everything \
+    pm.dexopt.install-bulk=everything \
+    pm.dexopt.shared=everything \
     pm.dexopt.bg-dexopt=everything \
-    pm.dexopt.ab-ota=speed-profile \
+    pm.dexopt.ab-ota=everything \
     pm.dexopt.first-use=speed-profile \
     pm.dexopt.secondary=speed-profile
 
@@ -125,6 +128,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
     dalvik.vm.dexopt.secondary=true \
     dalvik.vm.dex2oat64.enabled=true \
+    dalvik.vm.systemuicompilerfilter=everything \
     persist.bg.dexopt.enable=true
 
 # Audio
