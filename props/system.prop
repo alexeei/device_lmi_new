@@ -36,6 +36,7 @@ ro.charger.disable_init_blank=true
 
 # Dexopt
 dalvik.vm.dex2oat64.enabled=true
+persist.sys.dalvik.multithread=true
 #ro.sys.fw.dex2oat_thread_count=8
 
 # Adaptive Suspend
