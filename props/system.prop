@@ -70,7 +70,7 @@ persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 
 # SkiaGL Threaded
 debug.renderengine.backend=skiaglthreaded
-debug.hwui.renderer=skiagl
+debug.hwui.renderer=opengl
 renderthread.skia.reduceopstasksplitting=true 
 #debug.hwc.force_gpu=1
 
