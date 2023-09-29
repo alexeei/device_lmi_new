@@ -187,6 +187,9 @@ debug.sf.enable_transaction_tracing=false
 persist.vendor.pps.disallowed=1
 persist.vendor.hvdcp_opti.disallowed=1
 
+# Incremental FS
+ro.incremental.enable=yes
+
 
 # LMK
 #ro.vendor.lmk.force_inkernel_lmk=true
@@ -271,8 +274,11 @@ persist.vendor.sensors.sync_request=true
 sys.vendor.shutdown.waittime=500
 
 # SoC
-ro.soc.manufacturer=Qualcomm
+ro.soc.manufacturer=QTI
 ro.soc.model=SM8250
+
+# SSR
+persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # Thermal
 vendor.sys.thermal.data.path=/data/vendor/thermal/
@@ -317,4 +323,4 @@ ro.hardware.egl=adreno
 ro.opengles.version=196610
 
 # Zygote
-#zygote.critical_window.minute=10
+zygote.critical_window.minute=10
