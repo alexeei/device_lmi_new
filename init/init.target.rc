@@ -123,7 +123,9 @@ on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
     rm /data/unencrypted/zram_swap
     swapon_all /vendor/etc/fstab.qcom
-    write /proc/sys/vm/swappiness 100
+    write /proc/sys/vm/page-cluster 0
+    write /proc/sys/vm/kswapd_threads 1
+    
 
 # Enable UFS powersaving
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 1
