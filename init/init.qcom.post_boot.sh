@@ -173,13 +173,13 @@ case "$target" in
 	echo 1 > /sys/devices/system/cpu/cpu7/core_ctl/nr_prev_assist_thresh
 
 	# Disable Core control on silver
-	#echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
+	echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
 
 	# Setting b.L scheduler parameters
-	echo 95 95 > /proc/sys/kernel/sched_upmigrate
-	echo 85 85 > /proc/sys/kernel/sched_downmigrate
-	echo 100 > /proc/sys/kernel/sched_group_upmigrate
-	echo 85 > /proc/sys/kernel/sched_group_downmigrate
+	echo 75 95 > /proc/sys/kernel/sched_upmigrate
+	echo 60 75 > /proc/sys/kernel/sched_downmigrate
+	echo 95 > /proc/sys/kernel/sched_group_upmigrate
+	echo 80 > /proc/sys/kernel/sched_group_downmigrate
 	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 	echo 400000000 > /proc/sys/kernel/sched_coloc_downmigrate_ns
 
@@ -212,15 +212,15 @@ case "$target" in
 
 	# configure governor settings for gold cluster
 	echo "schedhorizon" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
+	echo 2000 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
+	echo 500 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
 	echo 1574400 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
 
 	# configure governor settings for gold+ cluster
 	echo "schedhorizon" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
+	echo 1000 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us
+	echo 500 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
         if [ $rev == "2.0" ] || [ $rev == "2.1" ]; then
 		echo 1632000 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
 	else
