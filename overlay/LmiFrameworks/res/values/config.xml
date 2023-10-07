@@ -652,9 +652,6 @@
     
     <!-- Screen off UDFPS -->
     <bool name="config_supportScreenOffUdfps">true</bool>
-    
-    <!-- Determines whether the shell features all run on another thread. -->
-     <bool name="config_enableShellMainThread">true</bool>
      
     <!-- Flag indicating whether the surface flinger has limited
          alpha compositing functionality in hardware.  If set, the window
