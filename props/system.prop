@@ -48,13 +48,12 @@ persist.sys.dalvik.multithread=true
 debug.cpurend.vsync=false
 ##debug.gralloc.gfx_ubwc_disable=0
 ##persist.vendor.color.matrix=2
-##debug.sf.disable_client_composition_cache=1
-##debug.sf.enable_hwc_vds=1
-#debug.sf.latch_unsignaled=0
+debug.sf.disable_client_composition_cache=1
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=1
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
 #ro.config.avoid_gfx_accel=true
-#ro.sf.force_hwc_brightness=1
 ro.zygote.disable_gl_preload=false
 
 #Disable MTE Async for system server
