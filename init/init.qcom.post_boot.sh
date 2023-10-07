@@ -228,8 +228,7 @@ case "$target" in
 	fi
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/pl
 
-    #Write fake battery capacity value
-    echo 4700 > /dev/capacity    
+  
 
 	# Enable bus-dcvs
 	for device in /sys/devices/platform/soc
