@@ -187,7 +187,7 @@ case "$target" in
 
 	# cpuset parameters
     echo 1-2     > /dev/cpuset/audio-app/cpus
-	echo 0-2     > /dev/cpuset/background/cpus
+	echo 0-1     > /dev/cpuset/background/cpus
 	echo 0-3     > /dev/cpuset/system-background/cpus
     echo 0-3     > /dev/cpuset/restricted/cpus
 	echo 4-6     > /dev/cpuset/foreground/boost/cpus
