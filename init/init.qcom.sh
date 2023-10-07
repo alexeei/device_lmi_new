@@ -57,6 +57,10 @@ fi
 chmod g-w /data/vendor/modem_config
 setprop ro.vendor.ril.mbn_copy_completed 1
 
+
+# Clear packages_cache to avoid systemapp have mismatch strings id
+rm -rf /data/system/package_cache
+
 #gpu
     echo "195" > /sys/class/kgsl/kgsl-3d0/min_clock_mhz
     echo "195000000" > /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
