@@ -171,7 +171,7 @@ debug.sf.high_fps_late_sf_phase_offset_ns=-2000000
 ro.surface_flinger.protected_contents=true
 debug.sf.hw=0
 debug.egl.hw=0
-ro.hwui.render_ahead=2
+ro.hwui.render_ahead=20
 ##debug.sf.enable_egl_image_tracker=1
 ro.surface_flinger.set_idle_timer_ms=350
 ro.surface_flinger.set_touch_timer_ms=200
@@ -203,7 +203,7 @@ ro.incremental.enable=yes
 
 
 # LMK
-#ro.vendor.lmk.force_inkernel_lmk=true
+ro.vendor.lmk.force_inkernel_lmk=true
 
 # Keystore
 ro.hardware.keystore_desede=true
