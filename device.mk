@@ -289,6 +289,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     memtrack.kona \
+    vendor.display.config@1.0 \
     vendor.display.config@1.5 \
     vendor.display.config@1.11.vendor \
     vendor.display.config@1.9 \
@@ -296,12 +297,14 @@ PRODUCT_PACKAGES += \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.mapperextensions@1.2 \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.mapper@1.1.vendor \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor
+
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.surface_flinger.set_display_power_timer_ms=3000 \
 
 
 TARGET_SCREEN_HEIGHT := 2400
