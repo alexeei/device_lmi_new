@@ -64,7 +64,7 @@
 
 # HBM
 /sys/devices/platform/soc/soc:qcom,dsi-display/hbm                      u:object_r:sysfs_display:s0
-/sys/devices/platform/soc/soc:qcom,dsi-display/msm_fb_ea_enable         u:object_r:sysfs_display:s0
+/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure         u:object_r:sysfs_display:s0
 
 #USB fast charge
 /sys/kernel/fast_charge/force_fast_charge                               u:object_r:sysfs_htsr:s0

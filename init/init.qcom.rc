@@ -140,8 +140,8 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
     
-    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable
-    chmod 0664 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure
     
     chown system system /sys/kernel/fast_charge/force_fast_charge
     chmod 0664 /sys/kernel/fast_charge/force_fast_charge
