@@ -216,12 +216,8 @@ PRODUCT_PACKAGES += \
 
 
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.1.vendor \
     android.hardware.bluetooth.audio-impl \
-    android.hardware.bluetooth.audio@2.1-impl \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
-    android.hardware.bluetooth.audio@2.0-impl \
-    android.hardware.bluetooth.audio@2.1-impl \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor \
     vendor.qti.hardware.fm@1.0.vendor
@@ -282,6 +278,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
+    android.hardware.graphics.allocator@3.0 \
+    android.hardware.graphics.allocator@3.0.vendor \
     gralloc.kona \
     libdisplayconfig.qti \
     libdisplayconfig.system.qti \
@@ -290,7 +288,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.kona \
     vendor.display.config@1.0 \
-    vendor.display.config@1.5 \
     vendor.display.config@1.11.vendor \
     vendor.display.config@1.9 \
     vendor.display.config@1.9.vendor \
@@ -303,8 +300,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor
 
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.surface_flinger.set_display_power_timer_ms=3000 \
 
 
 TARGET_SCREEN_HEIGHT := 2400
@@ -552,7 +547,6 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2 \
     android.hardware.power@1.2.vendor \
     android.hardware.power-service.xiaomi-lmi
    
@@ -617,6 +611,8 @@ PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
 
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
 
 # Smart IDLE Maintaince
 PRODUCT_SYSTEM_PROPERTIES += \
