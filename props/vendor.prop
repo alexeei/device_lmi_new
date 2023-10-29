@@ -184,6 +184,9 @@ persist.vendor.hvdcp_opti.disallowed=1
 # LMK
 #ro.vendor.lmk.force_inkernel_lmk=true
 
+# Logs
+persist.log.tag.OpenGLRenderer=S
+
 # Keystore
 ro.hardware.keystore_desede=true
 
