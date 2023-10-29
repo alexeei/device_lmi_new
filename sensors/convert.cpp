@@ -388,7 +388,7 @@ bool patchXiaomiPickupSensor(SensorInfo& sensor) {
 
     sensor.type = SensorType::PICK_UP_GESTURE;
     sensor.typeAsString = SENSOR_STRING_TYPE_PICK_UP_GESTURE;
-    sensor.maxRange = 20;
+    sensor.maxRange = 1;
 
     return true;
 }
