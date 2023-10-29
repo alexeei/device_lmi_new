@@ -206,7 +206,7 @@ ro.incremental.enable=yes
 
 
 # LMK
-ro.vendor.lmk.force_inkernel_lmk=true
+#ro.vendor.lmk.force_inkernel_lmk=true
 
 # Keystore
 ro.hardware.keystore_desede=true
