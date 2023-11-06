@@ -262,7 +262,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
     android.hardware.camera.metadata@3.6 \
     android.hardware.camera.metadata@3.6.vendor \
-    libstdc++.vendor
     
 # Charger
 PRODUCT_PACKAGES += \
