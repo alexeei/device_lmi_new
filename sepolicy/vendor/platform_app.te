@@ -15,6 +15,7 @@ dontaudit platform_app hal_power_service:service_manager { find };
 allow platform_app {
     hal_camerapostproc_xiaomi_hwservice
     hal_misys_hwservice
+    hal_turbo_adapter_hwservice
 }:hwservice_manager find;
 
 
