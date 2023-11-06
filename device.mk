@@ -303,8 +303,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4-service.clearkey \
-    android.hardware.drm@1.4.vendor
+    android.hardware.drm-service.clearkey 
 
 # Fastboot
 PRODUCT_PACKAGES += \
@@ -437,7 +436,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc_snxxx@1.2-service \
+    android.hardware.nfc@1.2-service \
     android.hardware.secure_element@1.2.vendor \
     com.android.nfc_extras \
     libchrome.vendor \
