@@ -305,7 +305,11 @@ TARGET_SCREEN_WIDTH := 1080
 
 # DRM
 PRODUCT_PACKAGES += \
+<<<<<<< HEAD
     android.hardware.drm-service.clearkey 
+=======
+    android.hardware.drm-service.clearkey
+>>>>>>> 9cd74469 (switch to aidl drm)
 
 # Fastboot
 PRODUCT_PACKAGES += \
