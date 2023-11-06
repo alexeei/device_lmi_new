@@ -260,7 +260,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
     android.hardware.camera.metadata@3.6 \
     android.hardware.camera.metadata@3.6.vendor \
-    libstdc++.vendor
     
 # Charger
 PRODUCT_PACKAGES += \
@@ -436,7 +435,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc_snxxx@1.2-service \
+    android.hardware.nfc@1.2-service \
     android.hardware.secure_element@1.2.vendor \
     com.android.nfc_extras \
     libchrome.vendor \
