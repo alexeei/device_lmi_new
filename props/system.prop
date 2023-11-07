@@ -197,8 +197,8 @@ ro.config.sdha_apps_bg_min=8
 
 
 # Smoothens UI
-ro.kernel.checkjni=0
-ro.kernel.android.checkjni=0
+#ro.kernel.checkjni=0
+#ro.kernel.android.checkjni=0
 profiler.force_disable_err_rpt=1
 profiler.force_disable_ulog=1
 debugtool.anrhistory=0
