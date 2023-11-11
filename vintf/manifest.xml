@@ -642,14 +642,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl">
-        <name>android.hardware.power</name>
-        <version>3</version>
-        <interface>
-            <name>IPower</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="hidl">
         <name>android.hardware.soundtrigger</name>
         <transport>hwbinder</transport>
@@ -664,10 +656,5 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <name>IGoogleBattery</name>
         <instance>default</instance>
       </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.thermal</name>
-        <transport>hwbinder</transport>
-        <fqname>@2.0::IThermal/default</fqname>
     </hal>
 </manifest>

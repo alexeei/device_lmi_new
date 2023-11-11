@@ -10,4 +10,4 @@ type nxpnfc_hwservice, hwservice_manager_type;
 type nxpese_hwservice, hwservice_manager_type;
 
 
-type hal_turbo_adapter_hwservice, hwservice_manager_type;
+

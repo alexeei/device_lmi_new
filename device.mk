@@ -5,7 +5,7 @@
 #
 
 # Enable updating of APEXes
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 
 # Setup dalvik vm configs
@@ -24,6 +24,7 @@ $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
+
 
 # Platform
 PRODUCT_BOARD_PLATFORM := kona
@@ -304,19 +305,15 @@ TARGET_SCREEN_WIDTH := 1080
 
 # DRM
 PRODUCT_PACKAGES += \
-<<<<<<< HEAD
     android.hardware.drm-service.clearkey 
-=======
-    android.hardware.drm-service.clearkey
->>>>>>> 9cd74469 (switch to aidl drm)
 
 # Fastboot
 PRODUCT_PACKAGES += \
     fastbootd
 
 # Fastcharge
-PRODUCT_PACKAGES += \
-    vendor.lineage.fastcharge@1.0-service.xiaomi_sm8250
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.fastcharge@1.0-service.xiaomi_sm8250
 
 # Google Camera
 PRODUCT_COPY_FILES += \
@@ -585,6 +582,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.xiaomi_lmi \
     android.frameworks.sensorservice@1.0.vendor \
+     android.frameworks.sensorservice@1.0 \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
