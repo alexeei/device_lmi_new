@@ -132,6 +132,7 @@ BOARD_KERNEL_CMDLINE := \
     msm_rtb.filter=0x237 \
     reboot=panic_warm \
     service_locator.enable=1 \
+    androidboot.selinux=permissive \
     swiotlb=2048
 
 
@@ -156,7 +157,8 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     QCLinker=1
 TARGET_KERNEL_CLANG_VERSION := neutron
 
-#SELINUX_IGNORE_NEVERALLOWS := true
+SELINUX_IGNORE_NEVERALLOWS := true
+
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true

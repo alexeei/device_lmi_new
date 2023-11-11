@@ -71,12 +71,12 @@ on fs
     chmod 0644 /mnt/vendor/dsp/fastrpc_shell_3
     mount none /mnt/vendor/dsp/fastrpc_shell_3 /vendor/dsp/cdsp/fastrpc_shell_3 bind
 
-rm /cache/boot_lc_main.txt
+rm /data/boot_lc_main.txt
 rm /cache/boot_dmesg.txt
 start boot_lc_main
 start boot_dmesg
 
-service boot_lc_main /system/bin/logcat -f /cache/boot_lc_main.txt
+service boot_lc_main /system/bin/logcat -f /data/boot_lc_main.txt
     class main
     user root
     group root system

@@ -24,6 +24,7 @@ $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 
 # Platform
@@ -93,7 +94,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-
+# A2DP
+PRODUCT_PACKAGES += \
+  liba2dpoffload \
+  android.hardware.bluetooth.a2dp@2.0-impl \
+  android.hardware.bluetooth.a2dp@2.0-service \
+  android.hardware.bluetooth.a2dp@2.1-impl \
+  android.hardware.bluetooth.a2dp@2.1-service \
+  android.hardware.bluetooth.a2dp@2.2-impl \
+  android.hardware.bluetooth.a2dp@2.2-service
 
 # ART
 # Optimize everything for preopt
@@ -221,7 +230,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor \
-    vendor.qti.hardware.fm@1.0.vendor
+    vendor.qti.hardware.fm@1.0.vendor \
+
 
 # Bluetooth Library Deps
 PRODUCT_PACKAGES += \
@@ -233,7 +243,9 @@ PRODUCT_PACKAGES += \
     liblhdc \
     liblhdcBT_enc \
     liblhdcdec \
-    liblhdcBT_dec
+    liblhdcBT_dec \
+    libbthost_if_sink.so \
+    libbthost_if.vendor 
 
 # Bluetooth Ant+ Hal Deps
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -504,13 +516,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.media \
     com.android.media.swcodec \
+    android.hardware.media.omx@1.0-impl \
     android.hardware.media.omx@1.0-service \
     libgui \
     libmedia \
     libmedia_jni \
     libmediandk \
     libstagefright \
-    libstagefright_omx \
+    libstagefright_omx.vendor \
     libstagefright_foundation
 
 # Overlays
@@ -555,7 +568,10 @@ PRODUCT_COPY_FILES += \
 
 # Protobuf
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1
 
 # QMI
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
@@ -582,7 +598,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.xiaomi_lmi \
     android.frameworks.sensorservice@1.0.vendor \
-     android.frameworks.sensorservice@1.0 \
+    android.frameworks.sensorservice@1.0 \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
@@ -675,6 +691,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.xiaomi_lmi
     
+#VNDK
+PRODUCT_PACKAGES += \
+    libstdc++ \
+    libstdc++_vendor
+
 # Vulkan
 PRODUCT_PACKAGES += \
     libvulkan
