@@ -142,20 +142,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-util \
-    libaudiohal@7.0 \
-    libaudiohal@7.1 \
-    android.hardware.audio.common@7.0 \
-    android.hardware.audio.common@7.0-util \
-    android.hardware.audio.common@7.1-enums \
-    android.hardware.audio.common@7.1-util \
-    android.hardware.audio.effect@7.0 \
-    android.hardware.audio.effect@7.0-util \
-    android.hardware.audio.effect@7.0-impl \
-    android.hardware.audio@7.0 \
-    android.hardware.audio@7.1 \
-    android.hardware.audio@7.1-util \
-    android.hardware.audio@7.1-impl \
-    libaudiohal.effect@7.0 \
     audio.bluetooth.default \
     audio.primary.kona \
     audio.r_submix.default \
@@ -170,7 +156,8 @@ PRODUCT_PACKAGES += \
     libsndmonitor \
     libtinycompress \
     audioadsprpcd \
-    libvolumelistener
+    libvolumelistener \
+    sound_trigger.primary.kona
     
 # Audio-Legacy | From hardware/qcom-caf/sm8250/audio/configs/kona/kona.mk
 PRODUCT_PACKAGES += \
@@ -244,7 +231,7 @@ PRODUCT_PACKAGES += \
     liblhdcBT_enc \
     liblhdcdec \
     liblhdcBT_dec \
-    libbthost_if_sink.so \
+    libbthost_if_sink \
     libbthost_if.vendor 
 
 # Bluetooth Ant+ Hal Deps
