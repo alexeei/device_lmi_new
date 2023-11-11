@@ -153,3 +153,8 @@
 # NFC
 /vendor/bin/hw/android\.hardware\.nfc-service\.nxp    u:object_r:hal_nfc_default_exec:s0
 
+
+
+
+# Wakeup Nodes
+/sys/devices(/platform)?/soc/soc:qcom,msm-audio-apr/soc:qcom,msm-audio-apr:qcom,q6core-audio/soc:qcom,msm-audio-apr:qcom,q6core-audio:sound/Listen.[0-9]+.Audio.Service/wakeup(/.*)? u:object_r:sysfs_wakeup:s0
