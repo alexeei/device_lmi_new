@@ -124,6 +124,7 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vintf/manifest.xml
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     androidboot.hardware=qcom \
+    androidboot.fstab_suffix=qcom \
     androidboot.init_fatal_reboot_target=recovery \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
