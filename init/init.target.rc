@@ -138,7 +138,8 @@ on property:sys.boot_completed=1
 # Enable UFS powersaving
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 1
 
-on charger
+
+on property:init.svc.vendor.charger=running
     start vendor.power_off_alarm
     setprop sys.usb.controller a600000.dwc3
     setprop sys.usb.configfs 1
