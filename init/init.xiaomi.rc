@@ -62,6 +62,7 @@ on boot
     chown system system /sys/class/thermal/thermal_message/balance_mode
     chown system system /sys/class/thermal/thermal_message/temp_state
     write /sys/block/sda/queue/wbt_lat_usec 75000
+    chown system system /sys/touchpanel/double_tap
 
 on property:sys.boot_completed=1
     # configure input boost settings

@@ -14,6 +14,10 @@ ro.audio.resampler.psd.tbwcheat=0
 tunnel.audio.encode=true
 persist.bluetooth.sbc_hd_higher_bitrate=1
 
+# Bluetooth
+persist.vendor.btstack.enable.twsplus=true
+persist.vendor.bt.a2dp.hal.implementation=true
+
 #Battery Property
 ro.charger.enable_suspend = 1
 

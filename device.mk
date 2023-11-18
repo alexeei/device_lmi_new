@@ -27,9 +27,6 @@ OVERRIDE_TARGET_FLATTEN_APEX := true
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 
-# Platform
-PRODUCT_BOARD_PLATFORM := kona
-TARGET_BOARD_PLATFORM := kona
 
 #SELINUX_IGNORE_NEVERALLOWS := true
 
@@ -37,9 +34,7 @@ TARGET_BOARD_PLATFORM := kona
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-# Perf
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.perf@2.2.vendor
+
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -555,6 +550,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
+PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/power/config/$(TARGET_BOARD_PLATFORM)/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml 
+
+# Perf
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.perf@2.2 \
+    vendor.qti.hardware.perf@2.2.vendor
+
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat \
@@ -566,6 +569,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
+
+# Platform
+PRODUCT_BOARD_PLATFORM := kona
+TARGET_BOARD_PLATFORM := kona
 
 # QMI
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true

@@ -133,7 +133,6 @@ BOARD_KERNEL_CMDLINE := \
     msm_rtb.filter=0x237 \
     reboot=panic_warm \
     service_locator.enable=1 \
-    androidboot.selinux=permissive \
     swiotlb=2048
 
 
@@ -158,7 +157,7 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     QCLinker=1
 TARGET_KERNEL_CLANG_VERSION := neutron
 
-SELINUX_IGNORE_NEVERALLOWS := true
+#SELINUX_IGNORE_NEVERALLOWS := true
 
 
 # Metadata
@@ -244,7 +243,7 @@ TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/props/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop
 
 # Power
-#TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 HWUI_COMPILE_FOR_PERF := true
 
 # RIL
