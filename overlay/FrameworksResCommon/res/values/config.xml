@@ -327,6 +327,9 @@
     <string name="config_wlan_network_service_package">vendor.qti.iwlan</string>
     <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
 
+    <!-- Whether the new Auto Selection Network UI should be shown -->
+    <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
+
     <!-- Configure emergency apn as empty(null) apn -->
     <string name="config_emergency_apn"></string>
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
