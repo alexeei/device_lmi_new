@@ -67,13 +67,15 @@ arm64.memtag.process.system_server=off
 # Disable blur on app launch
 ro.launcher.blur.appLaunch=0
 
+# FEAS
+ro.feas.enable=true
 
 # Feature flags
 persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 
 # SkiaGL Threaded
-debug.renderengine.backend=skiaglthreaded
-debug.hwui.renderer=opengl
+#debug.renderengine.backend=skiaglthreaded
+debug.hwui.renderer=skiavk
 renderthread.skia.reduceopstasksplitting=true 
 #debug.hwc.force_gpu=1
 
@@ -109,6 +111,10 @@ persist.log.tag.wificond=S
 persist.log.tag.b/223498680=S
 persist.log.tag.TrafficStats=S
 persist.log.tag.ContrastColorUtil=S
+
+# LMKD
+ro.config.low_ram=false
+ro.lmk.log_stats=true
 
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
