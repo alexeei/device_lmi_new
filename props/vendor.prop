@@ -57,6 +57,7 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.audio.use.sw.mpegh.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
 vendor.voice.path.for.pcm.voip=true
+vendor.audio.offload.buffer.size.kb=256
 ro.vendor.audio.hifi=true
 
 
@@ -213,6 +214,9 @@ ro.incremental.enable=yes
 # Logs
 persist.log.tag.OpenGLRenderer=S
 
+# Multi-Gen LRU
+persist.device_config.mglru_native.lru_gen_config=core
+
 # Keystore
 ro.hardware.keystore_desede=true
 
@@ -288,6 +292,7 @@ persist.radio.dynamic_sar=false
 # Sensors
 persist.vendor.sensors.allow_non_default_discovery=true
 persist.vendor.sensors.sync_request=true
+persist.vendor.sensors.on_change_sample_period=true
 
 # Shutdown
 sys.vendor.shutdown.waittime=500
