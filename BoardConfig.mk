@@ -121,6 +121,7 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vintf/manifest.xml
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     androidboot.hardware=qcom \
+    androidboot.fstab_suffix=qcom \
     androidboot.init_fatal_reboot_target=recovery \
     androidboot.memcg=1 \
     kpti=off \
@@ -233,7 +234,6 @@ TARGET_USERIMAGES_SPARSE_F2FS_DISABLED := true
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/props/odm.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/props/product.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/props/system.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/props/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop

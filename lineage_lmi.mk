@@ -14,7 +14,7 @@ $(call inherit-product, device/xiaomi/lmi/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-#$(call inherit-product, vendor/gms/common/common-vendor1.mk)
+$(call inherit-product, vendor/gms/common/common-vendor1.mk)
 
 # Set Boot Animination Resolution
 TARGET_BOOT_ANIMATION_RES := 1080

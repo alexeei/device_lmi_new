@@ -5,7 +5,7 @@
 #
 
 # Enable updating of APEXes
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 
 # Setup dalvik vm configs
@@ -24,6 +24,7 @@ $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Platform
 PRODUCT_BOARD_PLATFORM := kona
@@ -139,20 +140,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-util \
-    libaudiohal@7.0 \
-    libaudiohal@7.1 \
-    android.hardware.audio.common@7.0 \
-    android.hardware.audio.common@7.0-util \
-    android.hardware.audio.common@7.1-enums \
-    android.hardware.audio.common@7.1-util \
-    android.hardware.audio.effect@7.0 \
-    android.hardware.audio.effect@7.0-util \
-    android.hardware.audio.effect@7.0-impl \
-    android.hardware.audio@7.0 \
-    android.hardware.audio@7.1 \
-    android.hardware.audio@7.1-util \
-    android.hardware.audio@7.1-impl \
-    libaudiohal.effect@7.0 \
     audio.bluetooth.default \
     audio.primary.kona \
     audio.r_submix.default \
@@ -167,7 +154,8 @@ PRODUCT_PACKAGES += \
     libsndmonitor \
     libtinycompress \
     audioadsprpcd \
-    libvolumelistener
+    libvolumelistener \
+    sound_trigger.primary.kona
     
 # Audio-Legacy | From hardware/qcom-caf/sm8250/audio/configs/kona/kona.mk
 PRODUCT_PACKAGES += \
@@ -203,11 +191,22 @@ PRODUCT_COPY_FILES += \
     hardware/qcom-caf/sm8250/audio/configs/common/bluetooth_qti_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_qti_hearing_aid_audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+
+# A2DP
+PRODUCT_PACKAGES += \
+  liba2dpoffload \
+  android.hardware.bluetooth.a2dp@2.0-impl \
+  android.hardware.bluetooth.a2dp@2.0-service \
+  android.hardware.bluetooth.a2dp@2.1-impl \
+  android.hardware.bluetooth.a2dp@2.1-service \
+  android.hardware.bluetooth.a2dp@2.2-impl \
+  android.hardware.bluetooth.a2dp@2.2-service \
+  android.hardware.bluetooth.a2dp@1.0-impl \
+  android.hardware.bluetooth.a2dp@1.0-service
 
 # Biometrics
 PRODUCT_PACKAGES += \
@@ -219,19 +218,26 @@ PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.touchfeature@1.0.vendor
 
 # Bluetooth
-
-
-
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor 
+    vendor.qti.hardware.btconfigstore@2.0.vendor \
+    vendor.qti.hardware.fm@1.0.vendor 
 
 # Bluetooth Library Deps
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    libbluetooth_audio_session 
+    libbluetooth_audio_session \
+    libbthost_if.vendor \
+    libldacBT_bco \
+    libldacBT_bco.vendor \
+    liblhdc \
+    liblhdcBT_enc \
+    liblhdcdec \
+    liblhdcBT_dec \
+    libbthost_if_sink \
+    libbthost_if.vendor 
 
 # Bluetooth Ant+ Hal Deps
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -260,6 +266,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
     android.hardware.camera.metadata@3.6 \
     android.hardware.camera.metadata@3.6.vendor \
+    libstdc++_vendor 
     
 # Charger
 PRODUCT_PACKAGES += \
@@ -435,7 +442,9 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2.vendor \
     android.hardware.nfc@1.2-service \
+    android.hardware.nfc-service.nxp \
     android.hardware.secure_element@1.2.vendor \
     com.android.nfc_extras \
     libchrome.vendor \
@@ -504,13 +513,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.media \
     com.android.media.swcodec \
+    android.hardware.media.omx@1.0-impl \
     android.hardware.media.omx@1.0-service \
     libgui \
     libmedia \
     libmedia_jni \
     libmediandk \
     libstagefright \
-    libstagefright_omx \
+    libstagefright_omx.vendor \
     libstagefright_foundation
 
 # Overlays
@@ -544,7 +554,6 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2.vendor \
     android.hardware.power-service.xiaomi-lmi
    
 PRODUCT_COPY_FILES += \
@@ -555,7 +564,10 @@ PRODUCT_COPY_FILES += \
 
 # Protobuf
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat
 
 # QMI
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
@@ -582,6 +594,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.xiaomi_lmi \
     android.frameworks.sensorservice@1.0.vendor \
+    android.frameworks.sensorservice@1.0 \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
@@ -685,7 +698,12 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
-    
+  
+#VNDK
+PRODUCT_PACKAGES += \
+    libstdc++ \
+    libstdc++_vendor
+  
 #Webview
 #PRODUCT_PACKAGES += bromite-webview    
 
