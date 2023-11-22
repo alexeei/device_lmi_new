@@ -9,7 +9,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 
 # Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
@@ -25,7 +25,6 @@ $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
-
 
 
 #SELINUX_IGNORE_NEVERALLOWS := true
