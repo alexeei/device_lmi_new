@@ -179,19 +179,18 @@ case "$target" in
 	echo 75 95 > /proc/sys/kernel/sched_upmigrate
 	echo 60 75 > /proc/sys/kernel/sched_downmigrate
 	echo 95 > /proc/sys/kernel/sched_group_upmigrate
-	echo 80 > /proc/sys/kernel/sched_group_downmigrate
-	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
+	echo 70 > /proc/sys/kernel/sched_group_downmigrate
 	echo 400000000 > /proc/sys/kernel/sched_coloc_downmigrate_ns
 
     #gpu
 
 	# cpuset parameters
-    echo 0-2     > /dev/cpuset/audio-app/cpus
+    echo 1-2     > /dev/cpuset/audio-app/cpus
 	echo 0-1     > /dev/cpuset/background/cpus
-	echo 0-3     > /dev/cpuset/system-background/cpus
+	echo 0-2     > /dev/cpuset/system-background/cpus
     echo 0-3     > /dev/cpuset/restricted/cpus
 	echo 4-6     > /dev/cpuset/foreground/boost/cpus
-	echo 1-6     > /dev/cpuset/foreground/cpus
+	echo 0-6     > /dev/cpuset/foreground/cpus
 	echo 0-7     > /dev/cpuset/top-app/cpus
 
 

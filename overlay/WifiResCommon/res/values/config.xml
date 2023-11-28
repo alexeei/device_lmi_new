@@ -85,11 +85,11 @@
 
     <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
-    <string name="config_wifi_tcp_buffers" translatable="false">524288,1048576,2097152,524288,1048576,4194304</string>
+    <string name="config_wifi_tcp_buffers" translatable="false">524288,1048576,16777216,262144,524288,16777216</string>
 
     <!-- Array describing scanning schedule in seconds when device is disconnected and screen is on -->
     <integer-array name="config_wifiDisconnectedScanIntervalScheduleSec">
-    <item>20</item>
+    <item>30</item>
     </integer-array>
 
     <!-- Enable concurrent internet connectivity + internet connectivity

@@ -136,10 +136,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-util \
+    android.hardware.audio@7.0-impl \
+    android.hardware.audio.effect@7.0-util \
     audio.bluetooth.default \
     audio.primary.kona \
     audio.r_submix.default \
@@ -154,8 +154,7 @@ PRODUCT_PACKAGES += \
     libsndmonitor \
     libtinycompress \
     audioadsprpcd \
-    libvolumelistener \
-    sound_trigger.primary.kona
+    libvolumelistener 
     
 # Audio-Legacy | From hardware/qcom-caf/sm8250/audio/configs/kona/kona.mk
 PRODUCT_PACKAGES += \
@@ -196,17 +195,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
-# A2DP
-PRODUCT_PACKAGES += \
-  liba2dpoffload \
-  android.hardware.bluetooth.a2dp@2.0-impl \
-  android.hardware.bluetooth.a2dp@2.0-service \
-  android.hardware.bluetooth.a2dp@2.1-impl \
-  android.hardware.bluetooth.a2dp@2.1-service \
-  android.hardware.bluetooth.a2dp@2.2-impl \
-  android.hardware.bluetooth.a2dp@2.2-service \
-  android.hardware.bluetooth.a2dp@1.0-impl \
-  android.hardware.bluetooth.a2dp@1.0-service
 
 # Biometrics
 PRODUCT_PACKAGES += \
@@ -222,22 +210,12 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor \
-    vendor.qti.hardware.fm@1.0.vendor 
+    vendor.qti.hardware.btconfigstore@2.0.vendor 
 
 # Bluetooth Library Deps
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    libbluetooth_audio_session \
-    libbthost_if.vendor \
-    libldacBT_bco \
-    libldacBT_bco.vendor \
-    liblhdc \
-    liblhdcBT_enc \
-    liblhdcdec \
-    liblhdcBT_dec \
-    libbthost_if_sink \
-    libbthost_if.vendor 
+    libbluetooth_audio_session 
 
 # Bluetooth Ant+ Hal Deps
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -341,7 +319,8 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    librsjni
 
 # Health
 PRODUCT_PACKAGES += \
@@ -514,7 +493,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.media \
     com.android.media.swcodec \
-    android.hardware.media.omx@1.0-impl \
     android.hardware.media.omx@1.0-service \
     libgui \
     libmedia \
@@ -584,6 +562,11 @@ PRODUCT_PACKAGES += \
 # Remove Unwanted Packages
 PRODUCT_PACKAGES += \
     RemovePackages
+
+# RKPD
+PRODUCT_PRODUCT_PROPERTIES += \
+    remote_provisioning.enable_rkpd=true \
+    remote_provisioning.hostname=remoteprovisioning.googleapis.com
 
 # RIL
 PRODUCT_PACKAGES += \
