@@ -172,8 +172,10 @@
       "Path": "/dev/stune/top-app/schedtune.boost",
       "Values": [
         "30",
-        "10"
+        "10",
+        "0"
       ],
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
@@ -411,12 +413,6 @@
       "Node": "CPULittleClusterMinFreq",
       "Duration": 3000,
       "Value": "9999999"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 3000,
-      "Value": "3d"
     },
     {
       "PowerHint": "LAUNCH",
