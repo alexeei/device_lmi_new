@@ -133,6 +133,9 @@ BOARD_KERNEL_CMDLINE := \
     service_locator.enable=1 \
     iptable_raw.raw_before_defrag=1 \
     ip6table_raw.raw_before_defrag=1 \
+    androidboot.verifiedbootstate=green \
+    androidboot.vbmeta.device_state=locked \
+    androidboot.flash.locked=1 \
     swiotlb=0
 
 BOARD_KERNEL_BASE := 0x00000000
