@@ -301,6 +301,10 @@ PRODUCT_PACKAGES += \
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+# DeviceID
+PRODUCT_PACKAGES += \
+    DeviceID
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey 
