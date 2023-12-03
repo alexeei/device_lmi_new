@@ -133,6 +133,9 @@ BOARD_KERNEL_CMDLINE := \
     msm_rtb.filter=0x237 \
     reboot=panic_warm \
     service_locator.enable=1 \
+    androidboot.verifiedbootstate=green \
+    androidboot.vbmeta.device_state=locked \
+    androidboot.flash.locked=1 \
     swiotlb=2048
 
 
@@ -231,9 +234,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USERIMAGES_SPARSE_EROFS_DISABLED := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 TARGET_USERIMAGES_SPARSE_F2FS_DISABLED := true
-
-# Power
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/props/odm.prop

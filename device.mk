@@ -34,7 +34,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -88,7 +87,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
 
 
-
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -140,10 +138,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-util \
+    android.hardware.audio@7.0-impl \
+    android.hardware.audio.effect@7.0-util \
     audio.bluetooth.default \
     audio.primary.kona \
     audio.r_submix.default \
@@ -542,6 +540,12 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     DeviceParts
 
+
+
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.xiaomi-lmi
    
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json 
@@ -549,13 +553,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
-PRODUCT_COPY_FILES += \
-    vendor/qcom/opensource/power/config/$(TARGET_BOARD_PLATFORM)/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml 
 
-# Perf
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.perf@2.2 \
-    vendor.qti.hardware.perf@2.2.vendor
 
 # Protobuf
 PRODUCT_PACKAGES += \
@@ -564,14 +562,6 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
-
-
-# Platform
-PRODUCT_BOARD_PLATFORM := kona
-TARGET_BOARD_PLATFORM := kona
 
 # QMI
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
@@ -602,7 +592,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
-
+# RKPD
+PRODUCT_PRODUCT_PROPERTIES += \
+    remote_provisioning.enable_rkpd=true \
+    remote_provisioning.hostname=remoteprovisioning.googleapis.com
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 30

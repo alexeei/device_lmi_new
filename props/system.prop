@@ -56,7 +56,7 @@ debug.sf.enable_hwc_vds=1
 #debug.sf.latch_unsignaled=0
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
-#ro.config.avoid_gfx_accel=true
+ro.config.avoid_gfx_accel=true
 #ro.sf.force_hwc_brightness=1
 
 #Disable MTE Async for system server
@@ -67,8 +67,6 @@ arm64.memtag.process.system_server=off
 # Disable blur on app launch
 ro.launcher.blur.appLaunch=0
 
-# FEAS
-ro.feas.enable=true
 
 # Feature flags
 persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
@@ -111,6 +109,8 @@ persist.log.tag.wificond=S
 persist.log.tag.b/223498680=S
 persist.log.tag.TrafficStats=S
 persist.log.tag.ContrastColorUtil=S
+persist.log.tag.OpenGLRenderer=S
+persist.log.tag.ultrasound_extn=S
 
 # LMKD
 ro.config.low_ram=false
@@ -141,9 +141,9 @@ persist.vendor.qti.telephony.vt_cam_interface=2
 
 
 # IOP
-vendor.iop.enable_prefetch_ofr=1
-vendor.iop.enable_uxe=1
-ro.vendor.qti.sys.fw.bg_apps_limit=40
+#vendor.iop.enable_prefetch_ofr=1
+#vendor.iop.enable_uxe=1
+#ro.vendor.qti.sys.fw.bg_apps_limit=40
 
 # Netmgr
 persist.vendor.data.iwlan.enable=true
@@ -192,15 +192,15 @@ debug.cpurend.vsync=false
 #ro.surface_flinger.running_without_sync_framework=true
 
 # Ram Management
-ro.config.fha_enable=true
-ro.sys.fw.bg_apps_limit=32
-ro.config.dha_cached_max=16
-ro.config.dha_empty_max=42
-ro.config.dha_empty_init=32
-ro.config.dha_lmk_scale=0.545
-ro.config.dha_th_rate=2.3
-ro.config.sdha_apps_bg_max=64
-ro.config.sdha_apps_bg_min=8
+#ro.config.fha_enable=true
+#ro.sys.fw.bg_apps_limit=32
+#ro.config.dha_cached_max=16
+#ro.config.dha_empty_max=42
+#ro.config.dha_empty_init=32
+#ro.config.dha_lmk_scale=0.545
+#ro.config.dha_th_rate=2.3
+#ro.config.sdha_apps_bg_max=64
+#ro.config.sdha_apps_bg_min=8
 
 
 # Smoothens UI

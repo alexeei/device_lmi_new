@@ -40,7 +40,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
-        <version>6.0</version>
+        <version>7.0</version>
         <interface>
             <name>IDevicesFactory</name>
             <instance>default</instance>
@@ -49,7 +49,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
         <transport>hwbinder</transport>
-        <version>6.0</version>
+        <version>7.0</version>
         <interface>
             <name>IEffectsFactory</name>
             <instance>default</instance>
@@ -145,16 +145,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>SIM1</instance>
         </interface>
     </hal>
-    <!-- eSEPowerManager -->
-    <hal format="hidl">
-        <name>vendor.qti.esepowermanager</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>IEsePowerManager</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <!-- QSEECom HAL service -->
     <hal format="hidl">
         <name>vendor.qti.hardware.qseecom</name>
@@ -162,6 +152,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>1.0</version>
         <interface>
             <name>IQSEECom</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <!-- eSEPowerManager -->
+    <hal format="hidl">
+        <name>vendor.qti.esepowermanager</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IEsePowerManager</name>
             <instance>default</instance>
         </interface>
     </hal>
