@@ -133,9 +133,6 @@ BOARD_KERNEL_CMDLINE := \
     msm_rtb.filter=0x237 \
     reboot=panic_warm \
     service_locator.enable=1 \
-    androidboot.verifiedbootstate=green \
-    androidboot.vbmeta.device_state=locked \
-    androidboot.flash.locked=1 \
     swiotlb=2048
 
 
