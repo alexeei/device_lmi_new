@@ -209,7 +209,7 @@ ro.incremental.enable=yes
 
 
 # LMK
-#ro.vendor.lmk.force_inkernel_lmk=true
+ro.vendor.lmk.force_inkernel_lmk=true
 
 # Logs
 persist.log.tag.OpenGLRenderer=S
