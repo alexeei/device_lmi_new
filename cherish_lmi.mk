@@ -14,7 +14,7 @@ $(call inherit-product, device/xiaomi/lmi/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
-$(call inherit-product, vendor/gms/gms_pico1.mk)
+$(call inherit-product, vendor/gms/gms_nano.mk)
 
 
 # Set Boot Animination Resolution
