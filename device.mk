@@ -158,6 +158,9 @@ PRODUCT_PACKAGES += \
     audioadsprpcd \
     libvolumelistener \
     sound_trigger.primary.kona
+
+
+
     
 # Audio-Legacy | From hardware/qcom-caf/sm8250/audio/configs/kona/kona.mk
 PRODUCT_PACKAGES += \
