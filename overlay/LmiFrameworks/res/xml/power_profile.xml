@@ -30,7 +30,7 @@
         <value>1075200</value>
         <value>1344000</value>
         <value>1516800</value>
-        <value>1708800</value>
+        <value>1804800</value>
     </array>
     <array name="cpu.core_power.cluster0">
         <value>55.51</value>
@@ -38,33 +38,26 @@
         <value>62.96</value>
         <value>67.21</value>
         <value>71.79</value>  
-        <value>76.39</value>
+        <value>78.76</value>
     </array>
     <array name="cpu.core_speeds.cluster1">
         <value>710400</value>  
-        <value>1056000</value>
-        <value>1286400</value>
+        <value>1171200</value>
         <value>1478400</value>
-        <value>1766400</value>
+        <value>1670400</value>
         <value>2054400</value>
-        <value>2246400</value>
-        <value>2342400</value>
         <value>2419200</value>
     </array>
     <array name="cpu.core_power.cluster1">
         <value>97.85</value>
-        <value>123.5</value>
-        <value>144.42</value>
+        <value>133.5</value>
         <value>162.39</value>
-        <value>200.43</value>
+        <value>186.43</value>
         <value>260.78</value>
-        <value>300.11</value>
-        <value>324.37</value>
         <value>348.25</value>
     </array>
     <array name="cpu.core_speeds.cluster2">
         <value>844800</value>
-        <value>1075200</value>
         <value>1305600</value>
         <value>1862400</value>
         <value>1977600</value>
@@ -72,12 +65,10 @@
         <value>2169600</value>
         <value>2361600</value>
         <value>2457600</value>
-        <value>2553600</value>
         <value>2649600</value>
     </array>
     <array name="cpu.core_power.cluster2">
         <value>105.19</value>
-        <value>122.7</value>
         <value>142.49</value>
         <value>216.74</value>
         <value>244.09</value>
@@ -85,7 +76,6 @@
         <value>309.63</value>
         <value>332.67</value>
         <value>353.95</value>
-        <value>379.05</value>
         <value>409.84</value>
     </array>
     <item name="cpu.idle">12.91</item>

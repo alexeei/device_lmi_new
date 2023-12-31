@@ -145,7 +145,9 @@ persist.vendor.dpmhalservice.enable=1
 drm.service.enabled=true
 
 
-
+# EGL
+ro.egl.blobcache.multifile=true
+ro.egl.blobcache.multifile_limit=33554432
 
 # FM
 vendor.hw.fm.init=0
@@ -209,7 +211,7 @@ ro.incremental.enable=yes
 
 
 # LMK
-ro.vendor.lmk.force_inkernel_lmk=true
+#ro.vendor.lmk.force_inkernel_lmk=true
 
 # Logs
 persist.log.tag.OpenGLRenderer=S
