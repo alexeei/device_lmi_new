@@ -30,6 +30,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <unistd.h>
+#include <string.h>
 #include <vector>
 
 #include <android-base/properties.h>
@@ -155,48 +156,24 @@ void vendor_load_properties() {
     std::string heapstartsize, heapgrowthlimit, heapsize, heapminfree,
 			heapmaxfree, heaptargetutilization;
 
-    struct sysinfo sys;
     sysinfo(&sys);
-    if (sys.totalram > GB(7)) {
-    // from - phone-xhdpi-8192-dalvik-heap.mk
-        heapstartsize = "24m";
-        heapgrowthlimit = "256m";
-        heapsize = "512m";
-        heaptargetutilization = "0.46";
-        heapminfree = "8m";
-        heapmaxfree = "48m";
-    } else if (sys.totalram > GB(5)) {
-        // from - phone-xhdpi-6144-dalvik-heap.mk
-        heapstartsize = "16m";
-        heapgrowthlimit = "256m";
-        heapsize = "512m";
-        heaptargetutilization = "0.5";
-        heapminfree = "8m";
-        heapmaxfree = "32m";
-    } else if (sys.totalram > GB(3)) {
-        // from - phone-xhdpi-4096-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapgrowthlimit = "192m";
-        heapsize = "512m";
-        heaptargetutilization = "0.6";
-        heapminfree = "8m";
-        heapmaxfree = "16m";
+    if (sys.totalram > 7168ull * 1024 * 1024) {
+        // 8GB & 12GB RAM
+        property_override("dalvik.vm.heapstartsize", "32m");
+        property_override("dalvik.vm.heapgrowthlimit", "512m");
+        property_override("dalvik.vm.heapsize", "768m");
+        property_override("dalvik.vm.heapmaxfree", "64m");
     } else {
-        // from - phone-xhdpi-2048-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapgrowthlimit = "192m";
-        heapsize = "512m";
-        heaptargetutilization = "0.75";
-        heapminfree = "512k";
-        heapmaxfree = "8m";
+        // from - phone-xhdpi-6144-dalvik-heap.mk
+        property_override("dalvik.vm.heapstartsize", "16m");
+        property_override("dalvik.vm.heapgrowthlimit", "256m");
+        property_override("dalvik.vm.heapsize", "512m");
+        property_override("dalvik.vm.heapmaxfree", "32m");
     }
 
-    property_override("dalvik.vm.heapstartsize", heapstartsize.c_str());
-    property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit.c_str());
-    property_override("dalvik.vm.heapsize", heapsize.c_str());
-    property_override("dalvik.vm.heaptargetutilization", heaptargetutilization.c_str());
-    property_override("dalvik.vm.heapminfree", heapminfree.c_str());
-    property_override("dalvik.vm.heapmaxfree", heapmaxfree.c_str());
+    property_override("dalvik.vm.heaptargetutilization", "0.5");
+    property_override("dalvik.vm.heapminfree", "8m");
+
 
 #ifdef __ANDROID_RECOVERY__
     std::string buildtype = GetProperty("ro.build.type", "userdebug");
