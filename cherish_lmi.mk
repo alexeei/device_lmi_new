@@ -17,6 +17,7 @@ $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 $(call inherit-product, vendor/gms/gms_nano.mk)
 
 
+
 # Set Boot Animination Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
 
