@@ -577,6 +577,12 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti.vendor
 
+# Prebuilt packages QR code scanner
+PRODUCT_PACKAGES += \
+    MlkitBarcodeUI \
+    VisionBarcode \
+    QRCameraOverlay
+
 # Remove Unwanted Packages
 PRODUCT_PACKAGES += \
     RemovePackages
