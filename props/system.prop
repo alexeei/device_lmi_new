@@ -173,11 +173,11 @@ ro.ril.fast.dormancy.timeout=3
 ro.mot.eri.losalert.delay=100
 
 # Better Scrolling responsiveness and speed
-ro.min.fling_velocity=200
+ro.min.fling_velocity=70
 persist.sys.scrollingcache=3
 view.scroll_friction=0
 windowsmgr.max_events_per_sec=100
-ro.max.fling_velocity=20000
+ro.max.fling_velocity=21000
 ro.vendor.qti.cgroup_follow.enable=true 
 persist.vendor.qti.inputopts.enable=true 
 persist.vendor.qti.inputopts.movetouchslop=0.6 
