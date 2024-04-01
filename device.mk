@@ -536,7 +536,8 @@ PRODUCT_PACKAGES += \
     LmiFrameworks \
     LmiSystemUI \
     WifiResCommon \
-    WifiResTarget
+    WifiResTarget \
+    ApertureQRScannerOverlay
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
