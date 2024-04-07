@@ -117,6 +117,33 @@ persist.log.tag.ultrasound_extn=S
 ro.config.low_ram=false
 ro.lmk.log_stats=true
 
+ro.ENFORCE_PROCESS_LIMIT=false
+ro.MAX_SERVICE_INACTIVITY=false
+ro.MIN_HIDDEN_APPS=false
+ro.MAX_HIDDEN_APPS=false
+ro.CONTENT_APP_IDLE_OFFSET=false
+ro.EMPTY_APP_IDLE_OFFSET=false
+ro.MAX_ACTIVITIES=false
+ro.ACTIVITY_INACTIVITY_RESET_TIME=false
+ro.MAX_RECENT_TASKS=false
+ro.MIN_RECENT_TASKS=false
+ro.APP_SWITCH_DELAY_TIME=false
+ro.MAX_PROCESSES=false
+ro.PROC_START_TIMEOUT=false
+ro.CPU_MIN_CHECK_DURATION=false
+ro.GC_TIMEOUT=false
+ro.SERVICE_TIMEOUT=false
+ro.MIN_CRASH_INTERVAL=false
+
+ro.sys.fw.bservice_enable=true
+ro.sys.fw.bservice_limit=128
+#ro.sys.fw.bservice_age=10000
+ro.sys.fw.bg_apps_limit=256
+ro.vendor.qti.sys.fw.bservice_enable=true
+ro.vendor.qti.sys.fw.bservice_limit=128
+#ro.vendor.qti.sys.fw.bservice_age=10000
+ro.vendor.qti.sys.fw.bg_apps_limit=256
+
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
 
@@ -158,9 +185,9 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 
 
 # ZRAM writeback
-ro.zram.mark_idle_delay_mins=60
-ro.zram.first_wb_delay_mins=180
-ro.zram.periodic_wb_delay_hours=24
+#ro.zram.mark_idle_delay_mins=60
+#ro.zram.first_wb_delay_mins=180
+#ro.zram.periodic_wb_delay_hours=24
 
 
 # WFD
