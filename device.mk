@@ -722,6 +722,7 @@ PRODUCT_PACKAGES += \
 # Wi-Fi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
+    android.media.audio.common.types-V2-cpp \
     hostapd \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
