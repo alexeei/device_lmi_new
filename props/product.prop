@@ -12,5 +12,4 @@ persist.sys.fuse.passthrough.enable=true
 #persist.sys.fw.bg_apps_limit=64
 
 # RKPD
-remote_provisioning.enable_rkpd=true
 remote_provisioning.hostname=remoteprovisioning.googleapis.com
