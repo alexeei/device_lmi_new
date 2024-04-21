@@ -22,7 +22,7 @@ import android.app.Fragment;
 
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
+
 
 public class PopupCameraSettingsActivity extends CollapsingToolbarBaseActivity {
 
@@ -32,20 +32,9 @@ public class PopupCameraSettingsActivity extends CollapsingToolbarBaseActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
-    
-            PopupCameraSettingsFragment popupCameraFragment;
-            
-            
-            
-                    if (fragment == null) {
-                    
-                                popupCameraFragment = new PopupCameraSettingsFragment();
-                                
-                                            getFragmentManager()
-        .beginTransaction()
-        .add(R.id.content_frame, popupCameraFragment, TAG_POPUPCAMERA)
-        .commit();
+     getFragmentManager().beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+        new PopupCameraSettingsFragment(), TAG_POPUPCAMERA).commit();
+
         }
-  }
+  
 }

@@ -8,6 +8,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/cherish_lmi.mk
 
 COMMON_LUNCH_CHOICES := \
-    cherish_lmi-eng \
-    cherish_lmi-user \
-    cherish_lmi-userdebug
+    cherish_lmi-ap1a-eng \
+    cherish_lmi-ap1a-user \
+    cherish_lmi-ap1a-userdebug

@@ -14,7 +14,7 @@ $(call inherit-product, device/xiaomi/lmi/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
-$(call inherit-product, vendor/gms/gms_nano.mk)
+
 
 
 
@@ -30,20 +30,20 @@ PRODUCT_MODEL := POCO F2 Pro
 
 # GAPPS
 
-CHERISH_VANILLA := true
-#TARGET_USES_PICO_GAPPS := true
+CHERISH_VANILLA := false
+TARGET_USES_PICO_GAPPS := true
 #TARGET_USES_MINI_GAPPS := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
 CHERISH_MAINTAINER := alexeei
 CHERISH_CHIPSET := SM8250
 CHERISH_BATTERY := 4700mAh
 CHERISH_DISPLAY := 1080x2400
 CHERISH_BUILD_TYPE=OFFICIAL
-#WITH_GAPPS := true
+WITH_GAPPS := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
