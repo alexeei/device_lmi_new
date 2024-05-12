@@ -360,11 +360,7 @@ ndk::ScopedAStatus PowerHintSession::reportActualWorkDuration(
                             mDescriptor->current_min + static_cast<int>(output));
     next_min = std::max(static_cast<int>(adpfConfig->mUclampMinLow), next_min);
     setSessionUclampMin(next_min);
-    mStaleTimerHandler->updateTimer(getStaleTime());
-    if (HintManager::GetInstance()->GetAdpfProfile()->mEarlyBoostOn) {
-        updateWorkPeriod(actualDurations);
-        mEarlyBoostHandler->updateTimer(getEarlyBoostTime());
-    }
+    
 
     return ndk::ScopedAStatus::ok();
 }
@@ -469,11 +465,9 @@ void PowerHintSession::updateWorkPeriod(const std::vector<WorkDuration> &actualD
 
 time_point<steady_clock> PowerHintSession::getEarlyBoostTime() {
     std::shared_ptr<AdpfConfig> adpfConfig = HintManager::GetInstance()->GetAdpfProfile();
-    int64_t earlyBoostTimeoutNs =
-            (int64_t)mDescriptor->duration.count() * adpfConfig->mEarlyBoostTimeFactor;
     time_point<steady_clock> nextStartTime =
             mLastUpdatedTime.load() + nanoseconds(mWorkPeriodNs - mLastDurationNs);
-    return nextStartTime + nanoseconds(earlyBoostTimeoutNs);
+    return nextStartTime;
 }
 
 time_point<steady_clock> PowerHintSession::getStaleTime() {

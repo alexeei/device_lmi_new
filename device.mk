@@ -729,7 +729,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     libwifi-hal:64 \
     vendor.qti.hardware.wifi.hostapd@1.2.vendor \
-    android.hardware.wifi.supplicant \
     vendor.qti.hardware.wifi.supplicant@2.2.vendor \
     wpa_supplicant \
     WifiResCommon \
