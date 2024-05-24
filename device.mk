@@ -110,7 +110,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Package Manager
 PRODUCT_PROPERTY_OVERRIDES += \
     pm.dexopt.boot=verify \
-    pm.dexopt.first-boot=quicken \
+    pm.dexopt.first-boot=verify \
     pm.dexopt.install=speed-profile \
     pm.dexopt.install-fast=everything \
     pm.dexopt.install-bulk=everything \
