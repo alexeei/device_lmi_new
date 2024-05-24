@@ -20,7 +20,7 @@ $(call inherit-product, vendor/gms/common/common-vendor1.mk)
 #BCR
 $(call inherit-product, vendor/xiaomi/bcr/bcr.mk)
 
-$(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
+$(call inherit-product, vendor/xiaomi/lmi-miuicamera/config.mk)
 
 # Set Boot Animination Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
