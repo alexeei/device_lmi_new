@@ -511,7 +511,8 @@ PRODUCT_PACKAGES += \
     libmediandk \
     libstagefright \
     libstagefright_omx.vendor \
-    libstagefright_foundation
+    libstagefright_foundation \
+    libstagefright_softomx_plugin.vendor
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineageos
