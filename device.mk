@@ -4,12 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
 
 # Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
@@ -21,10 +18,6 @@ $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
 # HIDL HALs
 $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
-
-# APEX
-OVERRIDE_TARGET_FLATTEN_APEX := true
-OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Platform
 PRODUCT_BOARD_PLATFORM := kona
@@ -712,6 +705,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstdc++ \
     libstdc++_vendor
+
+# Target VNDK Fallback version
+PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32 33
   
 #Webview
 #PRODUCT_PACKAGES += bromite-webview    

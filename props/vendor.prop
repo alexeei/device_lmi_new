@@ -137,11 +137,11 @@ debug.sf.use_phase_offsets_as_durations 1
 debug.sf.late.sf.duration=10500000
 debug.sf.late.app.duration=16600000
 debug.sf.treat_170m_as_sRGB=1
-debug.sf.early.sf.duration=20000000
-debug.sf.early.app.duration=15000000
+#debug.sf.early.sf.duration=20000000
+#debug.sf.early.app.duration=15000000
 debug.sf.earlyGl.app.duration=16600000
-debug.sf.earlyGl.sf.duration=20000000
-debug.sf.hwc.min.duration=10000000
+#debug.sf.earlyGl.sf.duration=20000000
+#debug.sf.hwc.min.duration=10000000
 
 # DPM
 persist.vendor.dpm.feature=1
@@ -171,7 +171,7 @@ vendor.gatekeeper.disable_spu=true
 debug.sf.auto_latch_unsignaled=true
 ro.vendor.display.sensortype=2
 ##debug.sf.predict_hwc_composition_strategy=0
-##debug.gralloc.enable_fb_ubwc=1
+debug.gralloc.enable_fb_ubwc=1
 debug.mdpcomp.logs=0
 persist.sys.sf.color_mode=9
 persist.sys.sf.color_saturation=1.0
@@ -188,7 +188,7 @@ ro.surface_flinger.protected_contents=true
 debug.sf.hw=0
 debug.egl.hw=0
 ro.hwui.render_ahead=20
-##debug.sf.enable_egl_image_tracker=1
+debug.sf.enable_egl_image_tracker=0
 ro.surface_flinger.set_idle_timer_ms=350
 ro.surface_flinger.set_touch_timer_ms=200
 ro.surface_flinger.wcg_composition_dataspace=143261696
@@ -265,9 +265,12 @@ persist.vendor.quick.charge=1
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
+
 # Pre-rendering
 #ro.vendor.perf.scroll_opt=true
 
+#Phantom processes
+sys.fflag.override.settings_enable_monitor_phantom_procs=false
 
 # RCS
 persist.rcs.supported=1
