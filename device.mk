@@ -541,7 +541,18 @@ PRODUCT_PACKAGES += \
     DeviceParts
 
 
-
+PRODUCT_PACKAGES += \
+    libcurl.vendor \
+    libjsoncpp.vendor \
+    libsqlite.vendor \
+    libutilscallstack.vendor \
+    libstagefright_omx.vendor \
+    libstagefright_softomx_plugin.vendor \
+    libjson \
+    libjsoncpp.vendor \
+    libsqlite.vendor \
+    libpng.vendor 
+    
 
 # Power
 PRODUCT_PACKAGES += \
