@@ -6,7 +6,7 @@
 
 
 # Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
@@ -14,6 +14,8 @@ $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
 # Mindgapps
 #$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # HIDL HALs
 $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
@@ -511,8 +513,7 @@ PRODUCT_PACKAGES += \
     libmediandk \
     libstagefright \
     libstagefright_omx.vendor \
-    libstagefright_foundation \
-    libstagefright_softomx_plugin.vendor
+    libstagefright_foundation 
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineageos
@@ -552,6 +553,7 @@ PRODUCT_PACKAGES += \
     libjson \
     libjsoncpp.vendor \
     libsqlite.vendor \
+    liblzma.vendor \
     libpng.vendor 
     
 
@@ -620,7 +622,8 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Shims
 PRODUCT_PACKAGES += \
-    libpiex_shim
+    libpiex_shim \
+    libpiex 
 
 # Speed up
 PRODUCT_DEXPREOPT_SPEED_APPS += \
