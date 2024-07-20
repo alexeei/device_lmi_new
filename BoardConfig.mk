@@ -148,6 +148,7 @@ TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/neutron-
 KERNEL_CC := CC=$(TARGET_KERNEL_CLANG_PATH)/bin/clang
 
 TARGET_KERNEL_CLANG_COMPILE := true
+
 TARGET_KERNEL_ADDITIONAL_FLAGS := LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip 
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
 TARGET_KERNEL_CONFIG := vendor/lmi_defconfig
@@ -156,6 +157,8 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM_IAS=1 \
     QCLinker=1
 TARGET_KERNEL_CLANG_VERSION := neutron
+TARGET_KERNEL_LLVM_BINUTILS := true
+
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
