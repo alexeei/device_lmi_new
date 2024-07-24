@@ -220,6 +220,13 @@ ro.incremental.enable=yes
 
 # LMK
 #ro.vendor.lmk.force_inkernel_lmk=true
+ro.lmk.use_minfree_levels=true
+ro.lmk.filecache_min_kb=153600
+ro.lmk.kill_timeout_ms=50
+ro.lmk.stall_limit_critical=40
+ro.lmk.kill_heaviest_task=true
+ro.config.low_ram=false
+ro.lmk.log_stats=true
 
 # Logs
 persist.log.tag.OpenGLRenderer=S
@@ -238,6 +245,8 @@ media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
+# MultiGen LRU
+persist.device_config.mglru_native.lru_gen_config=core
 
 # OTG
 persist.sys.oem.otg_support=true

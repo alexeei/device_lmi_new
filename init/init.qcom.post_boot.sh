@@ -316,6 +316,57 @@ chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
 chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 chown -h system /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
 
+function configure_zram_parameters() {
+    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+    MemTotal=${MemTotalStr:16:8}
+
+    let RamSizeGB="( $MemTotal / 1048576 ) + 1"
+    let zRamSizeMB="( $RamSizeGB * 1024 ) / 2"
+    diskSizeUnit=M
+
+    # use MB avoid 32 bit overflow
+    if [ $zRamSizeMB -gt 4096 ]; then
+        let zRamSizeMB=4096
+    fi
+
+    echo lz4 > /sys/block/zram0/comp_algorithm
+
+    if [ -f /sys/block/zram0/disksize ]; then
+        if [ -f /sys/block/zram0/use_dedup ]; then
+            echo 1 > /sys/block/zram0/use_dedup
+        fi
+        if [ $MemTotal -le 524288 ]; then
+           echo 402653184 > /sys/block/zram0/disksize
+        elif [ $MemTotal -le 1048576 ]; then
+            echo 805306368 > /sys/block/zram0/disksize
+        else
+            zramDiskSize=$zRamSizeMB$diskSizeUnit
+            echo $zramDiskSize > /sys/block/zram0/disksize
+        fi
+
+        # ZRAM may use more memory than it saves if SLAB_STORE_USER
+        # debug option is enabled.
+        if [ -e /sys/kernel/slab/zs_handle ]; then
+            echo 0 > /sys/kernel/slab/zs_handle/store_user
+        fi
+        if [ -e /sys/kernel/slab/zspage ]; then
+            echo 0 > /sys/kernel/slab/zspage/store_user
+        fi
+
+        mkswap /dev/block/zram0
+        swapon /dev/block/zram0 -p 32758
+    fi
+}
+
+# Enable ZRAM
+configure_zram_parameters
+echo 0 > /proc/sys/vm/page-cluster
+echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
+echo 80 > /proc/sys/vm/swappiness
+
+# Enable PowerHAL hint processing
+setprop vendor.powerhal.init 1
+
 # Post-setup services
 case "$target" in
     "msm8909" | "msm8916" | "msm8937" | "msm8952" | "msm8953" | "msm8994" | "msm8992" | "msm8996" | "msm8998" | "sdm660" | "apq8098_latv" | "sdm845" | "sdm710" | "msmnile" | "msmsteppe" | "sm6150" | "kona" | "lito" | "trinket" | "atoll" | "bengal" | "sdmshrike")

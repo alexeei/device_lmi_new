@@ -118,8 +118,7 @@ ro.lmk.log_stats=true
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
 
-# MultiGen LRU
-persist.device_config.mglru_native.lru_gen_config=all
+
 
 # Printk
 persist.vendor.console.silent.config=1
