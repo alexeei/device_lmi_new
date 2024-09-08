@@ -34,45 +34,16 @@
         android:targetSdkVersion="30"/>
 
     <application
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/device_settings_app_name"
         android:persistent="true">
         
-        <receiver android:name=".BootCompletedReceiver" android:exported="false">
-            <intent-filter android:priority="1000">
+        <receiver android:name=".BootCompletedReceiver">
+            <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>        
-       
-       <!-- DeviceExtras -->
-        <activity android:name=".DeviceExtrasActivity" />
-
-        <activity android:name=".DeviceExtras" />
-
-        
-         <!-- TTL Tile -->
-        <service
-            android:name=".TTLTileService"
-            android:icon="@drawable/ic_linux"
-            android:label="@string/ttl_tile_label"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-        
-        <service
-            android:name=".display.DcDimmingTileService"
-            android:label="@string/dc_dimming_enable_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-        
+   
         
         <activity
             android:name=".display.DcDimmingSettingsActivity"
@@ -128,7 +99,6 @@
         </service>
         <activity
             android:name=".popupcamera.PopupCameraSettingsActivity"
-            android:icon="@drawable/ic_settings_popup"
             android:label="@string/popup_title"
             android:theme="@style/Theme.SubSettingsBase" >
             <intent-filter>
