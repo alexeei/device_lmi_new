@@ -13,3 +13,13 @@ persist.sys.fuse.passthrough.enable=true
 
 # RKPD
 remote_provisioning.hostname=remoteprovisioning.googleapis.com
+
+# LMK
+ro.vendor.lmk.force_inkernel_lmk=true
+ro.lmk.use_minfree_levels=true
+ro.lmk.filecache_min_kb=100600
+ro.lmk.kill_timeout_ms=30
+ro.lmk.stall_limit_critical=40
+ro.lmk.kill_heaviest_task=true
+ro.config.low_ram=false
+ro.lmk.log_stats=true
