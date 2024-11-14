@@ -625,7 +625,8 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Shims
 PRODUCT_PACKAGES += \
     libpiex_shim \
-    libpiex 
+    libpiex \
+    libcrypto-v34
 
 # Speed up
 PRODUCT_DEXPREOPT_SPEED_APPS += \
