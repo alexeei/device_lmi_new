@@ -31,5 +31,8 @@
     <!-- Burn-in protection -->
     <dimen name="burnin_protection_horizontal_shift">1dp</dimen>
 
+    <!-- Pixel pitch of the device. um/px -->
+    <item name="pixel_pitch" format="float" type="dimen">59.4</item>
+
 
 </resources>
