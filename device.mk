@@ -559,8 +559,8 @@ PRODUCT_PACKAGES += \
     
 
 # Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.xiaomi-lmi
+#PRODUCT_PACKAGES += \
+#    android.hardware.power-service.xiaomi-lmi
    
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json 
