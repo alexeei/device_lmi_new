@@ -160,6 +160,12 @@ ro.egl.blobcache.multifile_limit=33554432
 # FM
 vendor.hw.fm.init=0
 
+# Fingerprint
+persist.vendor.fingerprint.type=side
+persist.vendor.fingerprint.sensor_location=1080|965|115|local:4630946747577212033
+persist.vendor.fingerprint.sensor_modules=fortsense,fpc
+persist.vendor.qfp=false
+
 # FS-verity
 ro.apk_verity.mode=2
 

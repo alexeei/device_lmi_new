@@ -29,7 +29,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.fastcharge@[0-9]\.[0-9]-service\.xiaomi_sm8250          u:object_r:hal_lineage_fastcharge_default_exec:s0
 
 # Fingerprint
-/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.lmi                             u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.lmi                             u:object_r:hal_fingerprint_default_exec:s0
 
 # Fingerprint - FOD
 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui                                           u:object_r:sysfs_fod:s0

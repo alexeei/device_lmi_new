@@ -21,6 +21,7 @@ persist.vendor.sys.fp.                      u:object_r:vendor_fingerprint_prop:s
 ro.boot.fpsensor                            u:object_r:vendor_fingerprint_prop:s0
 ro.hardware.fp.                             u:object_r:vendor_fingerprint_prop:s0
 vendor.fps_hal.                             u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.fingerprint.                 u:object_r:vendor_fingerprint_prop:s0
 
 #IMEI
 persist.vendor.radio.imei                   u:object_r:vendor_deviceid_prop:s0
